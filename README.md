@@ -10,5 +10,5 @@ We are planning on developing a classic **tower defense game** with some *surpri
 
 
 ## References
-[Canyon Defense](http://miniclip.com/games/canyon-defense/tr/#t-c-f-C)
-[Wikipedia Entry on Tower Defense Games](https://en.wikipedia.org/wiki/Tower_defense)
+- [Canyon Defense](http://miniclip.com/games/canyon-defense/tr/#t-c-f-C)
+- [Wikipedia Entry on Tower Defense Games](https://en.wikipedia.org/wiki/Tower_defense)
