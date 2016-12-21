@@ -4,11 +4,16 @@
  * and open the template in the editor.
  */
 package academicwarfare;
+
 /**
  *
  * @author yigitpolat
  */
-public interface Event 
+public interface InteractionEvent extends Event
 {
-    
+    /**
+     * @param i
+     * @param obj
+     */
+    public void processInteraction( Interaction i, Object obj);
 }

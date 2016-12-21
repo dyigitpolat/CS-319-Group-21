@@ -25,10 +25,7 @@ public class GameEngine
     InteractionsManager im;
     EventManager em;
     
-    
     int timeQuantum;
-    int count = 0;
-    
     
     public GameEngine()
     {
@@ -56,11 +53,17 @@ public class GameEngine
     public void updateScene()
     {
         pm.updatePhysics();
+        em.processEvents();
+        
     }
     
     class EventManager
     {
-        
+        public void processEvents()
+        {
+            
+            
+        }
     }
     
     class PhysicsManager
@@ -107,58 +110,91 @@ public class GameEngine
     
     class InteractionsManager implements MouseListener, MouseMotionListener
     {
-
-        @Override
-        public void mouseClicked(MouseEvent e) {
-            count++;
-            System.out.println(count);
-        }
-
-        @Override
-        public void mousePressed(MouseEvent e) {
-            for( GameObject o : currentScene.getObjects())
-            {
-                if( o.contains( new Vector2( e.getX(), e.getY())))
-                {
-                    System.out.println("object pressed lol");
-                }
-            }
-            count++;
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e) {
-            count++;
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e) {
-            count++;
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e) {
-            count++;
-        }
-
-        @Override
-        public void mouseDragged(MouseEvent e) {
-            for( GameObject o : currentScene.getObjects())
-            {
-                if( o.contains( new Vector2( e.getX(), e.getY())))
-                {
-                    o.setPosition( new Vector2( e.getX() - o.getSize().x / 2, e.getY() - o.getSize().y / 2));
-                }
-            }
+        
+        public InteractionsManager()
+        {
             
-            count++;
-        }
-
-        @Override
-        public void mouseMoved(MouseEvent e) {
-            
-            count++;
         }
         
+        @Override
+        public void mouseClicked(MouseEvent e) 
+        {
+            
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) 
+        {
+            Vector2 mousePoint = new Vector2( e.getX(), e.getY());
+            MouseInteraction mi = new MouseInteraction();
+            mi.mousePressed(mousePoint);
+            
+            for( GameObject o : currentScene.getObjects())
+            {
+                if( o.contains(mousePoint))
+                {
+                    if( o.getInteractionEvent() != null)
+                    {
+                        o.getInteractionEvent().processInteraction(mi, o);
+                    }
+                }
+            }
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) 
+        {
+            Vector2 mousePoint = new Vector2( e.getX(), e.getY());
+            MouseInteraction mi = new MouseInteraction();
+            mi.mouseReleased(mousePoint);
+            
+            for( GameObject o : currentScene.getObjects())
+            {
+                if( o.contains(mousePoint))
+                {
+                    if( o.getInteractionEvent() != null)
+                    {
+                        o.getInteractionEvent().processInteraction(mi, o);
+                    }
+                }
+            }
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) 
+        {
+            
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) 
+        {
+            
+        }
+
+        @Override
+        public void mouseDragged(MouseEvent e) 
+        {
+            Vector2 mousePoint = new Vector2( e.getX(), e.getY());
+            MouseInteraction mi = new MouseInteraction();
+            mi.mouseDragged(mousePoint);
+            
+            for( GameObject o : currentScene.getObjects())
+            {
+                if( o.contains(mousePoint))
+                {
+                    if( o.getInteractionEvent() != null)
+                    {
+                        o.getInteractionEvent().processInteraction(mi, o);
+                    }
+                }
+            }
+        }
+
+        @Override
+        public void mouseMoved(MouseEvent e) 
+        {
+            
+        }
     }
 }

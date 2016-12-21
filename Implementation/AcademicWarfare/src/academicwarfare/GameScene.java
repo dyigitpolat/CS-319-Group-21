@@ -27,6 +27,7 @@ public class GameScene extends Scene
         obj1.setSize( new Vector2( 50.0f, 50.0f));
         obj1.setPosition( new Vector2( 50.0f, 300.0f));
         obj1.setVelocity( new Vector2( 50.0f, 0f));
+        obj1.setInteractionEvent( new DragEvent());
         
         obj2.setSize( new Vector2( 50.0f, 50.0f));
         obj2.setPosition( new Vector2( 700.0f, 300.0f));
@@ -35,6 +36,7 @@ public class GameScene extends Scene
         w.setSize( new Vector2( 50.0f, 50.0f));
         w.setPosition( new Vector2( 150.0f, 150.0f));
         w.setVelocity( new Vector2( 0f, 0f));
+        w.setInteractionEvent( new DragEvent());
         
         setObjects( new ArrayList<>());
         getObjects().add(obj1);

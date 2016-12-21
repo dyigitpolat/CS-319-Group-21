@@ -8,6 +8,7 @@ package academicwarfare;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
+import java.util.ArrayList;
 
 
 /**
@@ -21,9 +22,21 @@ public class GameObject
     private Vector2 velocity;
     private BufferedImage texture;
     private ImageObserver observer;
-    private boolean pressable;
+    private InteractionEvent interactionEvent;
+    private ArrayList<Event> events;
     private int tag;
     
+    
+    public GameObject()
+    {
+        position = new Vector2(0,0);
+        size = new Vector2(0,0);
+        velocity = new Vector2(0,0);
+        events = new ArrayList<>();
+        texture = null;
+        observer = null;
+        tag = 0;
+    }
     
     public void drawEntity( Graphics g)
     {
@@ -119,31 +132,49 @@ public class GameObject
     /**
      * @return the tag
      */
-    public int getTag() {
+    public final int getTag() {
         return tag;
     }
 
     /**
      * @param tag the tag to set
      */
-    public void setTag(int tag) {
+    public final  void setTag(int tag) {
         this.tag = tag;
     }
 
+
     /**
-     * @return the pressable
+     * @return the events
      */
-    public boolean isPressable() {
-        return pressable;
+    public ArrayList<Event> getEvents() {
+        return events;
     }
 
     /**
-     * @param pressable the pressable to set
+     * @param events the events to set
      */
-    public void setPressable(boolean pressable) {
-        this.pressable = pressable;
+    public void setEvents(ArrayList<Event> events) {
+        this.events = events;
     }
-
-
     
+    public void addEvent( Event e)
+    {
+        events.add(e);
+    }
+
+    /**
+     * @return the interactionEvent
+     */
+    public InteractionEvent getInteractionEvent() {
+        return interactionEvent;
+    }
+
+    /**
+     * @param interactionEvent the interactionEvent to set
+     */
+    public void setInteractionEvent(InteractionEvent interactionEvent) {
+        this.interactionEvent = interactionEvent;
+    }
+
 }
