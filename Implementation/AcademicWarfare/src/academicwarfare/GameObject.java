@@ -23,6 +23,7 @@ public class GameObject
     private Vector2 position;
     private Vector2 size;
     private Vector2 velocity;
+    private float rotation;
     private BufferedImage texture;
     private ImageObserver observer;
     private InteractionEvent interactionEvent;
@@ -39,13 +40,15 @@ public class GameObject
         texture = null;
         observer = null;
         tag = 0;
+        rotation = 0;
     }
+    
     
     public void drawEntity( Graphics g)
     {
-        
+      
         if( texture != null)
-            g.drawImage(texture, (int) position.x, (int) position.y, (int) size.x, (int) size.y, observer);
+            g.drawImage( texture, (int) position.x, (int) position.y, (int) size.x, (int) size.y, observer);
         else
             g.drawOval((int) getPosition().x, (int) getPosition().y, (int) getSize().x, (int) getSize().y);
     }
@@ -208,6 +211,20 @@ public class GameObject
      */
     public void setInteractionEvent(InteractionEvent interactionEvent) {
         this.interactionEvent = interactionEvent;
+    }
+
+    /**
+     * @return the rotation
+     */
+    public float getRotation() {
+        return rotation;
+    }
+
+    /**
+     * @param rotation the rotation to set
+     */
+    public void setRotation(float rotation) {
+        this.rotation = rotation;
     }
 
 }

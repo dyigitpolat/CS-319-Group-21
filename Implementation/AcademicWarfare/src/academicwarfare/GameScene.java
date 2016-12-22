@@ -5,11 +5,6 @@
  */
 package academicwarfare;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import javax.imageio.ImageIO;
 /**
  *
  * @author yigitpolat
@@ -32,10 +27,10 @@ public class GameScene extends Scene
     {
         for( int i = 0; i < 15; i++)
             for( int j = 0; j < 10; j++)
-                addTile( i, j, "Graphics/buz.png");
+                addTile( i, j, "Graphics/buz.png", true);
         
         for( int i = 4; i < 8; i++)
-            addTile( i, 5, "Graphics/normal.png");
+            addTile( i, 5, "Graphics/normal.png", true);
         
         Enemy obj1 = new Enemy();
         Enemy obj2 = new Enemy();
@@ -66,66 +61,4 @@ public class GameScene extends Scene
     }
     
 }
-
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import javax.imageio.ImageIO;
-/**
- *
- * @author yigitpolat
- */
-public class GameScene extends Scene
-{
-    
-    public GameScene()
-    {
-        initScene();
-    public void addTile( int x, int y, String texturepath, boolean movable)
-    {
-        Tile t = new Tile( x, y, texturepath, this, movable);
-        addObject( t);
-    }
-    
-    public final void initScene()
-    {
-        for( int i = 0; i < 15; i++)
-            for( int j = 0; j < 10; j++)
-                addTile( i, j, "Graphics/buz.png");
-        
-        for( int i = 4; i < 8; i++)
-            addTile( i, 5, "Graphics/normal.png");
-        
-        Enemy obj1 = new Enemy();
-        Enemy obj2 = new Enemy();
-        Weapon w = new Weapon( 150, 5);
-        
-        
-        obj1.setSize( new Vector2( 80.0f, 80.0f));
-        obj1.setPosition( new Vector2( 50.0f, 300.0f));
-        obj1.setVelocity( new Vector2( 50.0f, 0f));
-        obj1.setTexture("Graphics/aa.png", this);
-        
-        obj2.setSize( new Vector2( 80.0f, 80.0f));
-        obj2.setPosition( new Vector2( 700.0f, 300.0f));
-        obj2.setVelocity( new Vector2( -50.0f, 0f));
-        obj2.setTexture("Graphics/ugur.png", this);
-        
-        w.setSize( new Vector2( 50.0f, 50.0f));
-        w.setPosition( new Vector2( 150.0f, 150.0f));
-        w.setVelocity( new Vector2( 0f, 0f));
-        w.setInteractionEvent( new DragEvent());
-        w.setTexture("Graphics/Turret1.png", this);
-        
-        addObject(obj1);
-        addObject(obj2);
-        addObject(w);
-        
-        
-    }
-    
-}
-
-    }
     
