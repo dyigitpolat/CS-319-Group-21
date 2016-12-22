@@ -22,9 +22,9 @@ public class GameScene extends Scene
         initScene();
     }
     
-    public void addTile( int x, int y, String texturepath)
+    public void addTile( int x, int y, String texturepath, boolean movable)
     {
-        Tile t = new Tile( x, y, texturepath, this);
+        Tile t = new Tile( x, y, texturepath, this, movable);
         addObject( t);
     }
     
