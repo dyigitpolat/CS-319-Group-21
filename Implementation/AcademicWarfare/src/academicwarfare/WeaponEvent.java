@@ -13,11 +13,11 @@ import java.util.ArrayList;
  */
 public class WeaponEvent implements Event
 {
-    float range;
+    private int cooldown;
     
     public WeaponEvent()
     {
-        
+        cooldown = 0;
     }
     
     public float distance( Vector2 v1, Vector2 v2)
@@ -55,7 +55,7 @@ public class WeaponEvent implements Event
             }
         }
         
-        if( min <= range)
+        if( min <= w.getRange() )
         {
             return closestEnemy;
         }
@@ -67,7 +67,18 @@ public class WeaponEvent implements Event
     
     public void processWeapon( Weapon w, ArrayList<Enemy> enemies)
     {
+        Enemy closestEnemy;
         
+       cooldown++;
+        closestEnemy = closestEnemyInRange( enemies, w);
+        if( closestEnemy != null)
+        {
+            if( cooldown >= ( 1000 / w.getFireRate()))
+            {
+                w.fireAt( closestEnemy);
+                cooldown = 0;
+            }
+        }        
     }
     
 }

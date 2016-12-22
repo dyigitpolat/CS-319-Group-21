@@ -17,6 +17,10 @@ public class Scene extends JPanel
     private ArrayList<GameObject> gameObjects;
     private ArrayList<Event> events;
     
+    public Scene()
+    {
+        gameObjects = new ArrayList<>();
+    }
     
     @Override
     public void paintComponent( Graphics g)
@@ -40,6 +44,11 @@ public class Scene extends JPanel
      */
     public void setObjects(ArrayList<GameObject> gameObjects) {
         this.gameObjects = gameObjects;
+    }
+    
+    public void addObject( GameObject o)
+    {
+        gameObjects.add(o);
     }
 
     /**

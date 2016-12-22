@@ -8,7 +8,10 @@ package academicwarfare;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import javax.imageio.ImageIO;
 
 
 /**
@@ -40,8 +43,10 @@ public class GameObject
     
     public void drawEntity( Graphics g)
     {
-        g.drawOval((int) getPosition().x, (int) getPosition().y, (int) getSize().x, (int) getSize().y);
-        //g.drawImage(texture, (int) position.x, (int) position.y, (int) size.x, (int) size.y, observer);
+        if( texture != null)
+            g.drawImage(texture, (int) position.x, (int) position.y, (int) size.x, (int) size.y, observer);
+        else
+            g.drawOval((int) getPosition().x, (int) getPosition().y, (int) getSize().x, (int) getSize().y);
     }
 
     public boolean contains( Vector2 point)
@@ -113,6 +118,23 @@ public class GameObject
      */
     public void setTexture(BufferedImage texture) {
         this.texture = texture;
+    }
+    
+    public void setTexture(String texturePath, ImageObserver obs) {
+        
+        BufferedImage img = null;
+        try 
+        {
+            img = ImageIO.read(new File(texturePath));
+        } 
+        catch (IOException e) 
+        {
+            System.out.println("cannot find texture file.");
+            System.exit(0);
+        }
+        
+        setTexture( img);
+        observer = obs;
     }
 
     /**

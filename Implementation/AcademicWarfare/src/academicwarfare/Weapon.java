@@ -9,11 +9,46 @@ package academicwarfare;
  *
  * @author yigitpolat
  */
-public class Weapon extends GameObject implements Pressable
+public class Weapon extends GameObject
 {
-    @Override
-    public void onPress()
+    private float range;
+    private float fireRate;
+    
+    public Weapon( float range, float fireRate)
     {
-        System.out.println("weapon press");
+        
+    }
+    
+    public void fireAt( Enemy e)
+    {
+        
+    }
+
+    /**
+     * @return the range
+     */
+    public float getRange() {
+        return range;
+    }
+
+    /**
+     * @param range the range to set
+     */
+    public void setRange(float range) {
+        this.range = range;
+    }
+
+    /**
+     * @return the fireRate
+     */
+    public float getFireRate() {
+        return fireRate;
+    }
+
+    /**
+     * @param fireRate the fireRate to set
+     */
+    public void setFireRate(float fireRate) {
+        this.fireRate = fireRate;
     }
 }
