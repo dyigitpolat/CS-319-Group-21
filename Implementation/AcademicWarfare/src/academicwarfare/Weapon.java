@@ -64,19 +64,7 @@ public class Weapon extends GameObject
             else if( H < 0 && W < 0)
                 setRotation( (float) (Math.atan(H/W) + Math.PI + Math.PI / 2) );
         }
-        else
-        {
-            if( W == 0 && H > 0)
-                setRotation( (float) Math.toRadians(0));
-            else if( W == 0 && H < 0)
-                setRotation( (float) Math.toRadians(180));
-            else if( H == 0 && W > 0)
-                setRotation( (float) Math.toRadians(90));
-            else if( H == 0 && W < 0)
-                setRotation( (float) Math.toRadians(270));
-            else
-                setRotation( (float) Math.toRadians(0));
-        }
+        
         
         // The required drawing location
         int drawLocationX = (int) getCenter().x;
