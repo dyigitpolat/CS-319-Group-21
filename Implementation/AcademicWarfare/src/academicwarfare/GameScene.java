@@ -24,7 +24,7 @@ public class GameScene extends Scene
     
     public void addTile( int x, int y, String texturepath)
     {
-        Tile t = new Tile( x, y, texturepath, this);
+        Tile t = new Tile( x, y, texturepath, this, true);
         addObject( t);
     }
     
