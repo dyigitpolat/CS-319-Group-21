@@ -65,15 +65,27 @@ public class WeaponEvent implements Event
         }
     }
     
-    public void processWeapon( Weapon w, ArrayList<Enemy> enemies)
+    public ArrayList<Enemy> filterEnemies( ArrayList<GameObject> objects)
+    {
+        ArrayList<Enemy> filtered = new ArrayList<>();
+        for( GameObject o : objects)
+        {
+            if( o.getTag() == 1)
+                filtered.add( (Enemy) o);
+        }
+        
+        return filtered;
+    }
+    
+    public void processWeapon( Weapon w, ArrayList<GameObject> objects)
     {
         Enemy closestEnemy;
         
-       cooldown++;
-        closestEnemy = closestEnemyInRange( enemies, w);
+        cooldown++;
+        closestEnemy = closestEnemyInRange( filterEnemies(objects), w);
         if( closestEnemy != null)
         {
-            if( cooldown >= ( 1000 / w.getFireRate()))
+            if( cooldown >= ( 100 / w.getFireRate()))
             {
                 w.fireAt( closestEnemy);
                 cooldown = 0;
