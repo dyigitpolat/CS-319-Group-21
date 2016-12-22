@@ -5,6 +5,13 @@
  */
 package academicwarfare;
 
+import java.awt.BasicStroke;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.Line2D;
+import java.util.ArrayList;
+
 /**
  *
  * @author yigitpolat
@@ -13,16 +20,52 @@ public class Weapon extends GameObject
 {
     private float range;
     private float fireRate;
-    
+    private int firing = 0;
+    private Vector2 target;
+    private WeaponEvent we;
+            
     public Weapon( float range, float fireRate)
     {
-        
+        this.range = range;
+        this.fireRate = fireRate;
+        target = new Vector2();
+        firing = 10;
+        we = new WeaponEvent();
     }
     
     public void fireAt( Enemy e)
     {
-        
+        System.out.println("Weapon fired!");
+        target = e.getCenter();
+        firing = 0;
     }
+    
+    @Override
+    public void processEvents( ArrayList<GameObject> sceneObjects)
+    {
+        we.processWeapon(this, sceneObjects);
+    }
+    
+    @Override
+    public void drawEntity( Graphics g)
+    {
+        Graphics2D g2 = (Graphics2D) g;
+        
+        g2.rotate(-45);
+        super.drawEntity(g);
+        
+        g2.rotate(45);
+        g.drawOval( (int) (getCenter().x - range), (int) (getCenter().y - range), (int) (2*range), (int) (2*range));
+        
+        if( firing < 5)
+        {
+            g2.setStroke(new BasicStroke(5));
+            g2.setColor(Color.white);
+            g2.drawLine( (int) getCenter().x , (int) getCenter().y, (int) target.x, (int) target.y);
+            firing++;
+        }
+    }
+            
 
     /**
      * @return the range

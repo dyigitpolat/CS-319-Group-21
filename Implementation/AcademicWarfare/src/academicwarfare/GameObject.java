@@ -43,6 +43,7 @@ public class GameObject
     
     public void drawEntity( Graphics g)
     {
+        
         if( texture != null)
             g.drawImage(texture, (int) position.x, (int) position.y, (int) size.x, (int) size.y, observer);
         else
@@ -62,6 +63,16 @@ public class GameObject
         right = left + getSize().x;
         
         return (point.x <= right && point.x >= left && point.y >= up && point.y <= down);
+    }
+    
+    public void processEvents( ArrayList<GameObject> sceneObjects)
+    {
+        
+    }
+    
+    public Vector2 getCenter()
+    {
+        return new Vector2( position.x + size.x / 2, position.y + size.y/2);
     }
     
     /**

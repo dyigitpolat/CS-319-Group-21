@@ -37,9 +37,9 @@ public class GameScene extends Scene
         for( int i = 4; i < 8; i++)
             addTile( i, 5, "Graphics/normal.png");
         
-        GameObject obj1 = new GameObject();
-        GameObject obj2 = new GameObject();
-        Weapon w = new Weapon( 50, 2);
+        Enemy obj1 = new Enemy();
+        Enemy obj2 = new Enemy();
+        Weapon w = new Weapon( 150, 2);
         
         
         obj1.setSize( new Vector2( 80.0f, 80.0f));
@@ -52,7 +52,7 @@ public class GameScene extends Scene
         obj2.setVelocity( new Vector2( -50.0f, 0f));
         obj2.setTexture("Graphics/ugur.png", this);
         
-        w.setSize( new Vector2( 75.0f, 75.0f));
+        w.setSize( new Vector2( 50.0f, 50.0f));
         w.setPosition( new Vector2( 150.0f, 150.0f));
         w.setVelocity( new Vector2( 0f, 0f));
         w.setInteractionEvent( new DragEvent());
