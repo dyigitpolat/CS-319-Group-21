@@ -29,13 +29,13 @@ public class Weapon extends GameObject
         this.range = range;
         this.fireRate = fireRate;
         target = new Vector2();
-        firing = 10;
+        firing = 5;
         we = new WeaponEvent();
     }
     
     public void fireAt( Enemy e)
     {
-        System.out.println("Weapon fired!");
+        System.out.println("Weapon fired!" + firing);
         target = e.getCenter();
         firing = 0;
     }
@@ -51,10 +51,8 @@ public class Weapon extends GameObject
     {
         Graphics2D g2 = (Graphics2D) g;
         
-        g2.rotate(-45);
         super.drawEntity(g);
         
-        g2.rotate(45);
         g.drawOval( (int) (getCenter().x - range), (int) (getCenter().y - range), (int) (2*range), (int) (2*range));
         
         if( firing < 5)

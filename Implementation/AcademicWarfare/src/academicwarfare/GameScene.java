@@ -39,7 +39,7 @@ public class GameScene extends Scene
         
         Enemy obj1 = new Enemy();
         Enemy obj2 = new Enemy();
-        Weapon w = new Weapon( 150, 2);
+        Weapon w = new Weapon( 150, 5);
         
         
         obj1.setSize( new Vector2( 80.0f, 80.0f));

@@ -140,7 +140,7 @@ public class GameObject
         } 
         catch (IOException e) 
         {
-            System.out.println("cannot find texture file.");
+            System.err.println("cannot find texture file.");
             System.exit(0);
         }
         
