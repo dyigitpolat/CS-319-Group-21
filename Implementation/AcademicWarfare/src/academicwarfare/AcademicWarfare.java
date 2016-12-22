@@ -25,7 +25,7 @@ public class AcademicWarfare extends JFrame{
     private void initScreen() 
     {
         //to be changed with a screen instead.
-        Scene game_scr = new GameScene();
+        Scene game_scr = new ForrestScene();
         add(game_scr);
         setSize(800, 600);
         setTitle("Academic Warfare");

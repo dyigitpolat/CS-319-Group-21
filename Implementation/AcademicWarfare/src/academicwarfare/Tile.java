@@ -17,7 +17,8 @@ import javax.imageio.ImageIO;
  */
 public class Tile extends GameObject
 {
-    public Tile( int x, int y, String texturePath, ImageObserver observer)
+    private boolean movable;
+    public Tile( int x, int y, String texturePath, ImageObserver observer, boolean movable)
     {
         BufferedImage img = null;
         try 
@@ -29,11 +30,17 @@ public class Tile extends GameObject
             System.out.println("cannot find texture file.");
             System.exit(0);
         }
-        
+        this.movable = movable;
         setSize( new Vector2( 50, 50));
         setPosition( new Vector2( x*50, y*50));
         setVelocity( new Vector2());
         setTexture( img);
         setObserver( observer);
+    }
+    public void setMovable(boolean movable){
+        this.movable = movable;
+    }
+    public boolean getMovable(){
+        return this.movable;
     }
 }
