@@ -9,11 +9,11 @@ package academicwarfare;
  *
  * @author selin
  */
-public class IceScene extends Scene{
+public class IceScene extends GameScene{
     public IceScene(){
-        initScene();
+        initMap();
     }
-    public void initScene(){
+    public void initMap(){
         for(int i = 0; i <= 10; i++)
             for (int j = 0; j <= 10; j++)
                 if((( i < 7 && i > 4 ) && (j < 2 )) || 

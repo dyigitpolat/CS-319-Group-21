@@ -4,7 +4,7 @@ package academicwarfare;
  *
  * @author selin
  */
-public class ForestScene extends Scene {
+public class ForestScene extends GameScene {
     public ForestScene(){
         initScene();
     }
