@@ -33,6 +33,8 @@ public class GameScene extends Scene
     public final void initScene()
     {
         pointLabel = new JLabel(POINTS_DISPLAY_TEXT + 0);
+        //pointLabel.setHorizontalAlignment(JLabel.RIGHT);
+        
     }
     public void setPoints(int points){
         pointLabel.setText(POINTS_DISPLAY_TEXT + points);

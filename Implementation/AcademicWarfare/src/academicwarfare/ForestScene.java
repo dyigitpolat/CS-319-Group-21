@@ -6,9 +6,9 @@ package academicwarfare;
  */
 public class ForestScene extends GameScene {
     public ForestScene(){
-        initScene();
+        initMap();
     }
-    public void initScene(){
+    public void initMap(){
         for(int i = 0; i <= 10; i++)
             for (int j = 0; j <= 10; j++)
                 if((i < 2 && j < 2) || 
