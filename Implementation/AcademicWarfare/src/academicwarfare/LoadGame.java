@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package academicwarfare;
+import javax.swing.*;
 
 /**
  *
@@ -14,8 +15,9 @@ public class LoadGame extends javax.swing.JPanel {
     /**
      * Creates new form LoadGame
      */
-    public LoadGame() {
+    public LoadGame(JFrame frame) {
         initComponents();
+        this.mainFrame = frame;
     }
 
     /**
@@ -125,6 +127,6 @@ public class LoadGame extends javax.swing.JPanel {
     private javax.swing.JButton saveNo1;
     private javax.swing.JButton saveNo2;
     private javax.swing.JButton saveNo3;
+    private JFrame mainFrame ;
     // End of variables declaration//GEN-END:variables
 }
-s
