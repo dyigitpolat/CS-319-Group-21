@@ -34,7 +34,7 @@ public class GameItem extends GameObject {
             System.exit(0);
         }
         setTexture( img);
-        setObserver( observer); //not working here..
+        setObserver( this.getObserver()); //not working here..
         
     }
     public void drawEntity(Graphics g){
