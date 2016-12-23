@@ -3,15 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package academicwarfare;
-
-import java.awt.BorderLayout;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import javax.imageio.ImageIO;
-import javax.swing.JLabel;
+package academicwarfare
 /**
  *
  * @author yigitpolat
@@ -33,12 +25,13 @@ public class GameScene extends Scene
         addObject( t);
     }
     
-    public final void initScene()
-    {
+    public final void initScene(){
+
         pointLabel = new GameLabel(POINTS_DISPLAY_TEXT + 0);
         pointLabel.setPosition(new Vector2(600,30));
         pointLabel.setSize(new Vector2(10000,5000));
         addObject(pointLabel);
+
         
         waveLabel = new GameLabel(WAVE_DISPLAY_TEXT + 1);
         waveLabel.setPosition(new Vector2 (600, 50));
@@ -46,6 +39,11 @@ public class GameScene extends Scene
         addObject(waveLabel);
         
     }
+    
+  
+
+    
+
     public void setPoints(int points){
         pointLabel.setString(POINTS_DISPLAY_TEXT + points);
     }

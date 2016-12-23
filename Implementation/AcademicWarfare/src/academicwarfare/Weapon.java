@@ -9,7 +9,9 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.geom.Line2D;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 /**
@@ -23,6 +25,9 @@ public class Weapon extends GameObject
     private int firing = 0;
     private Vector2 target;
     private WeaponEvent we;
+    private BufferedImage original_image;
+    private boolean first;
+    private Enemy lastEnemy;
             
     public Weapon( float range, float fireRate)
     {
@@ -31,15 +36,61 @@ public class Weapon extends GameObject
         target = new Vector2();
         firing = 5;
         we = new WeaponEvent();
+        first = true;
+        lastEnemy = new Enemy();
     }
     
     public void fireAt( Enemy e)
     {
         System.out.println("Weapon fired!" + firing);
+        lastEnemy = e;
         target = e.getCenter();
         firing = 0;
     }
     
+    public void rotate()
+    {
+        float H = target.y - getCenter().y;
+        float W = target.x - getCenter().x;
+        
+        if( W != 0 && H != 0)
+        {
+            if( H > 0 && W > 0)
+                setRotation( (float) (Math.atan(H/W) + Math.PI / 2));
+            else if( H > 0 && W < 0)
+                setRotation( (float) (Math.atan(H/W) - Math.PI / 2) );
+            else if( H < 0 && W > 0)
+                setRotation( (float) (Math.atan(H/W) + Math.PI - Math.PI / 2) );
+            else if( H < 0 && W < 0)
+                setRotation( (float) (Math.atan(H/W) + Math.PI + Math.PI / 2) );
+        }
+        
+        
+        // The required drawing location
+        int drawLocationX = (int) getCenter().x;
+        int drawLocationY = (int) getCenter().y;
+
+        // Rotation information
+
+        double rotationRequired = getRotation();
+        double locationX = original_image.getWidth() / 2;
+        double locationY = original_image.getHeight() / 2;
+        AffineTransform tx = AffineTransform.getRotateInstance(rotationRequired, locationX, locationY);
+        AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_BILINEAR);
+        setTexture(op.filter(original_image, null));
+    }
+    
+    @Override
+    public void setTexture( BufferedImage bi)
+    {
+        super.setTexture(bi);
+        if( first)
+        {
+            original_image = bi;
+            first = false;
+        }
+    }
+            
     @Override
     public void processEvents( ArrayList<GameObject> sceneObjects)
     {
@@ -49,19 +100,21 @@ public class Weapon extends GameObject
     @Override
     public void drawEntity( Graphics g)
     {
-        Graphics2D g2 = (Graphics2D) g;
+        target = lastEnemy.getCenter();
+        rotate();
         
-        super.drawEntity(g);
-        
+        g.setColor(Color.red);
         g.drawOval( (int) (getCenter().x - range), (int) (getCenter().y - range), (int) (2*range), (int) (2*range));
-        
-        if( firing < 5)
+        if( firing < 7)
         {
+            Graphics2D g2 = (Graphics2D) g;
             g2.setStroke(new BasicStroke(5));
             g2.setColor(Color.white);
             g2.drawLine( (int) getCenter().x , (int) getCenter().y, (int) target.x, (int) target.y);
             firing++;
         }
+        
+        super.drawEntity(g);
     }
             
 

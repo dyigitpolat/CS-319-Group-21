@@ -23,6 +23,21 @@ public class IceScene extends GameScene{
                     addTile(i,j,"Graphics/buz.png", true);
                 else
                     addTile(i,j,"Graphics/buz-dış.png", false );
+        
+        Enemy e1 = new Enemy();
+        e1.setVelocity( new Vector2( 50, 0));
+        e1.setSize( new Vector2( 80, 80));
+        e1.setPosition( new Vector2( 50, 150));
+        e1.setTexture("Graphics/aa.png", this);
+        addObject(e1);
+        
+        Weapon w = new Weapon( 300, 5);
+        w.setSize( new Vector2( 80, 80));
+        w.setPosition( new Vector2( 150, 250));
+        w.setInteractionEvent( new DragEvent());
+        w.setTexture("Graphics/Turret1.png", this);
+        addObject(w);
+        
     }
      public void addTile( int x, int y, String texturepath, boolean movable)
     {
