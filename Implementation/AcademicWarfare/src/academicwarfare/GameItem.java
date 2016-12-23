@@ -46,6 +46,6 @@ public class GameItem extends GameObject {
     
     }
     public String getString(){
-        
+        return null;
     }
 }

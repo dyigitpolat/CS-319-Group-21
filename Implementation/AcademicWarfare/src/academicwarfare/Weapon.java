@@ -26,7 +26,7 @@ public class Weapon extends GameObject
     private Vector2 target;
     private WeaponEvent we;
     private BufferedImage original_image;
-    private boolean first;
+    private boolean texture_set;
     private Enemy lastEnemy;
             
     public Weapon( float range, float fireRate)
@@ -36,13 +36,13 @@ public class Weapon extends GameObject
         target = new Vector2();
         firing = 5;
         we = new WeaponEvent();
-        first = true;
+        texture_set = true;
         lastEnemy = new Enemy();
     }
     
     public void fireAt( Enemy e)
     {
-        System.out.println("Weapon fired!" + firing);
+        System.out.println("Weapon fired!");
         lastEnemy = e;
         target = e.getCenter();
         firing = 0;
@@ -77,19 +77,20 @@ public class Weapon extends GameObject
         double locationY = original_image.getHeight() / 2;
         AffineTransform tx = AffineTransform.getRotateInstance(rotationRequired, locationX, locationY);
         AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_BILINEAR);
-        setTexture(op.filter(original_image, null));
+        setTexture(op.filter(original_image, null));        
     }
     
     @Override
     public void setTexture( BufferedImage bi)
     {
         super.setTexture(bi);
-        if( first)
+        if( texture_set)
         {
             original_image = bi;
-            first = false;
+            texture_set = false;
         }
     }
+    
             
     @Override
     public void processEvents( ArrayList<GameObject> sceneObjects)
@@ -100,6 +101,7 @@ public class Weapon extends GameObject
     @Override
     public void drawEntity( Graphics g)
     {
+        Graphics2D g2 = (Graphics2D) g;
         target = lastEnemy.getCenter();
         rotate();
         
@@ -107,7 +109,6 @@ public class Weapon extends GameObject
         g.drawOval( (int) (getCenter().x - range), (int) (getCenter().y - range), (int) (2*range), (int) (2*range));
         if( firing < 7)
         {
-            Graphics2D g2 = (Graphics2D) g;
             g2.setStroke(new BasicStroke(5));
             g2.setColor(Color.white);
             g2.drawLine( (int) getCenter().x , (int) getCenter().y, (int) target.x, (int) target.y);
