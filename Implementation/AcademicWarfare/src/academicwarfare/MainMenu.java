@@ -5,6 +5,7 @@
  */
 package academicwarfare;
 
+import java.awt.EventQueue;
 import javax.swing.JFrame;
 
 /**
@@ -164,7 +165,18 @@ public class MainMenu extends javax.swing.JPanel {
     }//GEN-LAST:event_loadGameActionPerformed
 
     private void newGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameActionPerformed
-        // TODO add your handling code here:
+        
+       mainFrame.setVisible(false);
+       // TODO add your handling code here:
+        EventQueue.invokeLater( new Runnable() 
+        {
+            @Override
+            public void run() {
+                AcademicWarfare prg = new AcademicWarfare();
+                prg.setVisible(true);
+            }
+        });
+        
        // oyunu başlat
     }//GEN-LAST:event_newGameActionPerformed
 

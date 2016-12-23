@@ -41,15 +41,15 @@ public class AcademicWarfare extends JFrame{
      */
     public static void main(String[] args) 
     {
+        JFrame MenuFrame = new JFrame();
+        MenuFrame.add( new MainMenu(MenuFrame));
+        MenuFrame.setTitle("Academic Warfare");
+        MenuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        MenuFrame.setLocationRelativeTo(null);
+        MenuFrame.pack();
+        MenuFrame.setVisible(true);
         
-        EventQueue.invokeLater( new Runnable() 
-        {
-            @Override
-            public void run() {
-                AcademicWarfare prg = new AcademicWarfare();
-                prg.setVisible(true);
-            }
-        });
+        
     }
     
 }

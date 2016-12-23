@@ -5,16 +5,21 @@
  */
 package academicwarfare;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author onur.elbirlik
  */
 public class Tutorial extends javax.swing.JPanel {
 
+    JFrame mainframe;
     /**
      * Creates new form Tutorial
      */
-    public Tutorial() {
+    public Tutorial( JFrame mainframe) 
+    {
+        this.mainframe = mainframe;
         initComponents();
     }
 
