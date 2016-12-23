@@ -5,6 +5,8 @@
  */
 package academicwarfare;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author onur.elbirlik
@@ -14,8 +16,9 @@ public class Options extends javax.swing.JPanel {
     /**
      * Creates new form Options
      */
-    public Options() {
+    public Options(JFrame frame) {
         initComponents();
+        this.mainFrame = frame;
     }
 
     /**
@@ -118,6 +121,8 @@ public class Options extends javax.swing.JPanel {
 
     private void returnMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnMainMenuActionPerformed
         // TODO add your handling code here:
+        mainFrame.remove( this );
+        mainFrame.add( new MainMenu(mainFrame));
     }//GEN-LAST:event_returnMainMenuActionPerformed
 
 
@@ -130,5 +135,6 @@ public class Options extends javax.swing.JPanel {
     private javax.swing.JButton returnMainMenu;
     private javax.swing.JComboBox<String> soundEffectsBox;
     private javax.swing.JLabel soundEffectsLable;
+    private JFrame mainFrame;
     // End of variables declaration//GEN-END:variables
 }
