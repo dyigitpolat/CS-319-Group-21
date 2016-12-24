@@ -33,6 +33,8 @@ public class LoadGame extends javax.swing.JPanel {
         loadGameText = new javax.swing.JLabel();
         mainMenuButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 0, 102));
+
         saveNo1.setText("Save 1");
         saveNo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,6 +57,7 @@ public class LoadGame extends javax.swing.JPanel {
         });
 
         loadGameText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        loadGameText.setForeground(new java.awt.Color(255, 255, 255));
         loadGameText.setText("    Load Game");
 
         mainMenuButton.setText("Return Back To Main Menu");
@@ -75,11 +78,14 @@ public class LoadGame extends javax.swing.JPanel {
                         .addComponent(mainMenuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(198, 198, 198)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(saveNo1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(saveNo3, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(saveNo2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(loadGameText, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(loadGameText, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(saveNo3, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(saveNo2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(saveNo1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addGap(217, 217, 217))
         );
         layout.setVerticalGroup(
@@ -87,11 +93,11 @@ public class LoadGame extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(loadGameText)
-                .addGap(50, 50, 50)
+                .addGap(45, 45, 45)
                 .addComponent(saveNo1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(saveNo2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(16, 16, 16)
                 .addComponent(saveNo3)
                 .addGap(55, 55, 55)
                 .addComponent(mainMenuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)

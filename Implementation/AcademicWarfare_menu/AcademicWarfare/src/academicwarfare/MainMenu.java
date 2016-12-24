@@ -36,6 +36,9 @@ public class MainMenu extends javax.swing.JPanel {
         loadGame = new javax.swing.JButton();
         newGame = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 0, 102));
+
+        options.setForeground(new java.awt.Color(255, 102, 0));
         options.setText("Options");
         options.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -43,6 +46,7 @@ public class MainMenu extends javax.swing.JPanel {
             }
         });
 
+        highScores.setForeground(new java.awt.Color(255, 102, 0));
         highScores.setText("HighScores");
         highScores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,6 +54,7 @@ public class MainMenu extends javax.swing.JPanel {
             }
         });
 
+        exitGame.setForeground(new java.awt.Color(255, 102, 0));
         exitGame.setText("Exit Game");
         exitGame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,11 +63,14 @@ public class MainMenu extends javax.swing.JPanel {
         });
 
         mainTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        mainTitle.setForeground(new java.awt.Color(255, 102, 0));
         mainTitle.setText("Academic Warfare");
 
         mainMenuTitle.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        mainMenuTitle.setForeground(new java.awt.Color(255, 102, 0));
         mainMenuTitle.setText("Main Menu");
 
+        tutorial.setForeground(new java.awt.Color(255, 102, 0));
         tutorial.setText("Tutorial");
         tutorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,6 +78,7 @@ public class MainMenu extends javax.swing.JPanel {
             }
         });
 
+        loadGame.setForeground(new java.awt.Color(255, 102, 0));
         loadGame.setText("Load Game");
         loadGame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +86,7 @@ public class MainMenu extends javax.swing.JPanel {
             }
         });
 
+        newGame.setForeground(new java.awt.Color(255, 102, 0));
         newGame.setText("New Game");
         newGame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,45 +98,43 @@ public class MainMenu extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(228, 228, 228)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(highScores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(options, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(exitGame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tutorial, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(loadGame, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(newGame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(161, Short.MAX_VALUE)
-                .addComponent(mainTitle)
-                .addGap(156, 156, 156))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(mainMenuTitle)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(mainTitle)
+                        .addGap(156, 156, 156))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(loadGame)
+                            .addComponent(newGame, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mainMenuTitle)
+                            .addComponent(tutorial, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(options, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(highScores)
+                            .addComponent(exitGame, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(215, 215, 215))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addComponent(mainTitle)
-                .addGap(18, 18, 18)
-                .addComponent(mainMenuTitle)
-                .addGap(48, 48, 48)
-                .addComponent(newGame)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(mainMenuTitle)
+                .addGap(42, 42, 42)
+                .addComponent(newGame)
+                .addGap(18, 18, 18)
                 .addComponent(loadGame)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tutorial)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(options)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(15, 15, 15)
                 .addComponent(highScores)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(exitGame)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

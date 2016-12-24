@@ -32,6 +32,8 @@ public class HighScoreTable extends javax.swing.JPanel {
         returnToMainMenuButton = new javax.swing.JButton();
         HighScoreLable = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(0, 0, 102));
+
         highScoreTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Selin", "sln", "100"},
@@ -59,6 +61,7 @@ public class HighScoreTable extends javax.swing.JPanel {
         });
 
         HighScoreLable.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        HighScoreLable.setForeground(new java.awt.Color(240, 240, 240));
         HighScoreLable.setText("HighScores");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
