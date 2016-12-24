@@ -17,6 +17,6 @@ public class BasicGun extends Weapon
     {
         super(s, 150, 7);
         setTexture( "Graphics/Turret1.png");
-        setDamage( 15);
+        setDamage( 25);
     }
 }

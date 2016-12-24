@@ -39,17 +39,37 @@ public class Weapon extends GameObject
     private boolean texture_set;
     private Enemy lastEnemy;
             
+    public void update()
+    {
+        float randomizer = (float) Math.random() * 10 - 20;
+        float randomizer2 = (float) Math.random() * 10 - 20;
+        
+        for( GameObject o : this.getScene().getObjects())
+        {
+            if( (o != this) && (o.getTag() == 9 || o.getTag() == 10) && o.contains(getCenter()))
+            {
+                this.setPosition( new Vector2(getPosition().x + randomizer, getPosition().y + randomizer2));
+                return;
+            }
+        }
+    }
     public Weapon( GameScene s, float range, float fireRate)
     {
         super(s);
         this.range = range;
         this.fireRate = fireRate;
         target = new Vector2();
-        firing = 7;
+        firing = 3;
         we = new WeaponEvent();
         texture_set = true;
         lastEnemy = new Enemy( s);
         damage = 10;
+        setTag(9);
+    }
+    
+    public boolean isFiring()
+    {
+        return firing < 3;
     }
     
     public void fireAt( Enemy e)
@@ -61,7 +81,7 @@ public class Weapon extends GameObject
         e.dealDamage(getDamage());
         
         if( e.getHealth() <= 0)
-            firing = 7;
+            firing = 3;
     }
     
     public static void playFireSound()

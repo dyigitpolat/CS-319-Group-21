@@ -195,6 +195,7 @@ public class GameEngine
                     if( o.getInteractionEvent() != null)
                     {
                         o.getInteractionEvent().processInteraction(mi, o);
+                        return;
                     }
                 }
             }

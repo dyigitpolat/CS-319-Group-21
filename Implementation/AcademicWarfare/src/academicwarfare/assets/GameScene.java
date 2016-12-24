@@ -94,7 +94,6 @@ public class GameScene extends Scene
         bb2.setSize( new Vector2( 80, 80));
         bb2.setPosition( new Vector2( 680, 150));
         addObject(bb2);
-        
     }
     
     public Path createScenePath()

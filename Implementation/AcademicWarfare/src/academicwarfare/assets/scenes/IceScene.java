@@ -16,6 +16,7 @@ import academicwarfare.assets.gameobjects.AdvancedGun;
 import academicwarfare.assets.gameobjects.EnemyGenerator;
 import academicwarfare.assets.gameobjects.Atalar;
 import academicwarfare.assets.gameobjects.BasicGun;
+import academicwarfare.assets.gameobjects.Tower;
 import academicwarfare.assets.gameobjects.Weapon;
 
 /**
@@ -50,18 +51,17 @@ public class IceScene extends GameScene{
                 else
                     addTile(i,j,"Graphics/buz-dış.png", false );
         
+        Tower t = new Tower( this);
+        t.setSize( new Vector2( 150, 300));
+        t.setPosition( new Vector2( 0, 250));
+        t.setTexture("Graphics/tower.png");
+        addObject(t);
+        
         Weapon w = new BasicGun(this);
         w.setSize( new Vector2( 80, 80));
-        w.setPosition( new Vector2( 150, 250));
+        w.setPosition( new Vector2( 75, 75));
         w.setInteractionEvent( new DragEvent());
         addObject(w);
-        
-        Weapon w2 = new AdvancedGun(this);
-        w2.setSize( new Vector2( 80, 80));
-        w2.setPosition( new Vector2( 300, 250));
-        w2.setInteractionEvent( new DragEvent());
-        addObject(w2);
-        
         
         EnemyGenerator eg = new EnemyGenerator( this);
         eg.setPosition( new Vector2(300, -10));
