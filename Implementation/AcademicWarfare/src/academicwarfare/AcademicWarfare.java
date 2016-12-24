@@ -5,6 +5,10 @@
  */
 package academicwarfare;
 
+import academicwarfare.engine.Scene;
+import academicwarfare.engine.GameEngine;
+import academicwarfare.assets.scenes.IceScene;
+import academicwarfare.assets.menuframes.MainMenu;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 
