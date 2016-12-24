@@ -7,6 +7,7 @@ package academicwarfare.assets;
 
 import academicwarfare.assets.gameobjects.Tile;
 import academicwarfare.assets.gameobjects.GameLabel;
+import academicwarfare.engine.GameObject;
 import academicwarfare.engine.Scene;
 import academicwarfare.engine.Vector2;
 
@@ -31,17 +32,22 @@ public class GameScene extends Scene
         addObject( t);
     }
     
-    public final void initScene(){
-
+    public final void initScene()
+    {
+        GameObject sidebar = new GameObject();
+        sidebar.setSize( new Vector2(250, 600));
+        sidebar.setPosition( new Vector2( 550, 0));
+        sidebar.setTexture("Graphics/sidebar.png", this);
+        addObject(sidebar);
+        
+        
         pointLabel = new GameLabel(POINTS_DISPLAY_TEXT + 0);
-        pointLabel.setPosition(new Vector2(600,30));
-        pointLabel.setSize(new Vector2(10000,5000));
+        pointLabel.setPosition(new Vector2(580,60));
         addObject(pointLabel);
 
         
         waveLabel = new GameLabel(WAVE_DISPLAY_TEXT + 1);
-        waveLabel.setPosition(new Vector2 (600, 50));
-        waveLabel.setSize(new Vector2(1000,500));
+        waveLabel.setPosition(new Vector2 (580, 150));
         addObject(waveLabel);
         
     }

@@ -6,6 +6,8 @@
 package academicwarfare.assets.gameobjects;
 
 import academicwarfare.engine.GameObject;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 
 /**
@@ -20,9 +22,11 @@ public class GameLabel extends GameObject {
     }
     
     @Override
-    public void drawEntity(Graphics g){
+    public void drawEntity(Graphics g)
+    {
+        g.setFont(new Font("Times New Roman", Font.BOLD, 45));
+        g.setColor(Color.white);
         g.drawString(label, (int)(getPosition().x),(int)(getPosition().y));
-       
     }
     public void setString( String label){
         this.label = label;
