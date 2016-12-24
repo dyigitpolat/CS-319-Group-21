@@ -12,6 +12,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 import javax.swing.Timer;
 
 /**
@@ -56,6 +57,11 @@ public class GameEngine
         pm.updatePhysics();
         em.processEvents();
         
+        for( GameObject o : currentScene.getObjects())
+        {
+            o.update();
+        }
+        
     }
     
     class EventManager
@@ -91,7 +97,7 @@ public class GameEngine
             }
         }
         
-        public ArrayList<Collision> getCollisions()
+        public CopyOnWriteArrayList<Collision> getCollisions()
         {
             
             return null;

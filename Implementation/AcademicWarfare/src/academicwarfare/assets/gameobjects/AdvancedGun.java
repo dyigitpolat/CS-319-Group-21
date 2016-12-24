@@ -11,12 +11,12 @@ import academicwarfare.assets.GameScene;
  *
  * @author yigitpolat
  */
-public class BasicGun extends Weapon
+public class AdvancedGun extends Weapon
 {
-    public BasicGun( GameScene s)
+    public AdvancedGun( GameScene s)
     {
-        super(s, 150, 2);
-        setTexture( "Graphics/Turret1.png");
+        super( s, 200, 5);
+        setTexture( "Graphics/turret2.png");
         setDamage( 10);
     }
 }

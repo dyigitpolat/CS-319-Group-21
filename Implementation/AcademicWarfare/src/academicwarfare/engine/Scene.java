@@ -7,6 +7,9 @@ package academicwarfare.engine;
 
 import java.awt.Graphics;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import javax.swing.JPanel;
 /**
  *
@@ -14,12 +17,12 @@ import javax.swing.JPanel;
  */
 public class Scene extends JPanel
 {
-    private ArrayList<GameObject> gameObjects;
-    private ArrayList<Event> events;
+    private CopyOnWriteArrayList<GameObject> gameObjects;
+    private CopyOnWriteArrayList<Event> events;
     
     public Scene()
     {
-        gameObjects = new ArrayList<>();
+        gameObjects = new CopyOnWriteArrayList<>();
     }
     
     @Override
@@ -35,14 +38,14 @@ public class Scene extends JPanel
     /**
      * @return the gameObjects
      */
-    public ArrayList<GameObject> getObjects() {
+    public CopyOnWriteArrayList<GameObject> getObjects() {
         return gameObjects;
     }
 
     /**
      * @param gameObjects the gameObjects to set
      */
-    public void setObjects(ArrayList<GameObject> gameObjects) {
+    public void setObjects(CopyOnWriteArrayList<GameObject> gameObjects) {
         this.gameObjects = gameObjects;
     }
     
@@ -54,14 +57,14 @@ public class Scene extends JPanel
     /**
      * @return the events
      */
-    public ArrayList<Event> getEvents() {
+    public CopyOnWriteArrayList<Event> getEvents() {
         return events;
     }
 
     /**
      * @param events the events to set
      */
-    public void setEvents(ArrayList<Event> events) {
+    public void setEvents(CopyOnWriteArrayList<Event> events) {
         this.events = events;
     }
 

@@ -18,6 +18,7 @@ import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -44,7 +45,7 @@ public class Weapon extends GameObject
         this.range = range;
         this.fireRate = fireRate;
         target = new Vector2();
-        firing = 5;
+        firing = 7;
         we = new WeaponEvent();
         texture_set = true;
         lastEnemy = new Enemy( s);
@@ -59,6 +60,9 @@ public class Weapon extends GameObject
         firing = 0;
         playFireSound();
         e.dealDamage(getDamage());
+        
+        if( e.getHealth() <= 0)
+            firing = 7;
     }
     
     public static void playFireSound()
@@ -121,7 +125,7 @@ public class Weapon extends GameObject
     
             
     @Override
-    public void processEvents( ArrayList<GameObject> sceneObjects)
+    public void processEvents( CopyOnWriteArrayList<GameObject> sceneObjects)
     {
         we.processWeapon(this, sceneObjects);
     }
@@ -141,9 +145,10 @@ public class Weapon extends GameObject
             g2.setColor(Color.white);
             g2.drawLine( (int) getCenter().x , (int) getCenter().y, (int) target.x, (int) target.y);
             firing++;
+            g2.setStroke(new BasicStroke(1));
         }
         
-        super.drawEntity(g);
+        super.drawEntity(g); 
     }
             
 

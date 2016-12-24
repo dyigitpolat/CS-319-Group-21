@@ -16,7 +16,7 @@ public class Ezhan extends Enemy{
     public Ezhan( GameScene s)
     {
         super(s);
-        setTexture("Graphics/ehzan.png");
+        setTexture("Graphics/ezhan.png");
         setHealth(100);
         setSize( new Vector2( 80, 80));
     }

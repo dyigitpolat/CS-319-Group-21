@@ -43,6 +43,5 @@ public class PathEvent implements Event
         }
         
         p.followPoint( e);
-        System.out.println( "Following: "+ (int)p.getCurPoint().x + ":" + (int)p.getCurPoint().y);
     }
 }

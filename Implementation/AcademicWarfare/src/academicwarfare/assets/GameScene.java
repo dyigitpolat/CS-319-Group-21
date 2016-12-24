@@ -20,10 +20,14 @@ public class GameScene extends Scene
     private GameLabel pointLabel;
     private GameLabel waveLabel;
     private int points;
+    private int wave;
     private final String WAVE_DISPLAY_TEXT = "Wave: ";
     private final String POINTS_DISPLAY_TEXT = "Points: ";
+    
     public GameScene()
     {
+        points = 0;
+        wave = 1;
         initScene();
     }
     
@@ -42,17 +46,21 @@ public class GameScene extends Scene
         addObject(sidebar);
         
         
-        pointLabel = new GameLabel(this, "" + 0);
+        pointLabel = new GameLabel(this, "" + points);
         pointLabel.setPosition(new Vector2(580,60));
         addObject(pointLabel);
 
         
-        waveLabel = new GameLabel(this, WAVE_DISPLAY_TEXT + 1);
+        waveLabel = new GameLabel(this, "" + wave);
         waveLabel.setPosition(new Vector2 (580, 150));
         addObject(waveLabel);
         
     }
     
+    public Path createScenePath()
+    {
+        return null;
+    }
   
     public void addPoints( int points)
     {
@@ -66,6 +74,17 @@ public class GameScene extends Scene
     }
     public int getPoints(){
         return points;
+    }
+    
+    public void nextWave()
+    {
+        wave++;
+        waveLabel.setString("" + wave);
+    }
+    
+    public int getWave()
+    {
+        return wave;
     }
 }
 
