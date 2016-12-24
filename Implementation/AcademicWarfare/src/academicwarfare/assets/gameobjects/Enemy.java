@@ -45,6 +45,7 @@ public class Enemy extends GameObject
     public void die( int bounty)
     {
         getScene().addPoints( bounty);
+        getScene().addMoney( bounty);
         setPosition(new Vector2(-500, -500));
         setTexture( (BufferedImage) null);
         setVelocity( new Vector2());

@@ -67,10 +67,6 @@ public class IceScene extends GameScene{
         eg.setPosition( new Vector2(300, -10));
         addObject(eg);
         
-        nextWave();
-        nextWave();
-        nextWave();
-        nextWave();
     }
     
      public void addTile( int x, int y, String texturepath, boolean movable)

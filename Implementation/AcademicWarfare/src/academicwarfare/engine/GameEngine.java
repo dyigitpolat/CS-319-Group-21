@@ -31,7 +31,7 @@ public class GameEngine
     
     public GameEngine()
     {
-        timeQuantum = 10;
+        timeQuantum = 50;
         pm = new PhysicsManager();
         dm = new DisplayManager();
         im = new InteractionsManager();

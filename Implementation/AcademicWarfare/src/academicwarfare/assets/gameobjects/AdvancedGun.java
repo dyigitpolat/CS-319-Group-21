@@ -15,8 +15,8 @@ public class AdvancedGun extends Weapon
 {
     public AdvancedGun( GameScene s)
     {
-        super( s, 200, 5);
+        super( s, 200, 15);
         setTexture( "Graphics/turret2.png");
-        setDamage( 10);
+        setDamage( 15);
     }
 }

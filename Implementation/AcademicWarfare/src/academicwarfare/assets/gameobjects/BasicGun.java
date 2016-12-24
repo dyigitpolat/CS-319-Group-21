@@ -15,8 +15,8 @@ public class BasicGun extends Weapon
 {
     public BasicGun( GameScene s)
     {
-        super(s, 150, 2);
+        super(s, 150, 7);
         setTexture( "Graphics/Turret1.png");
-        setDamage( 10);
+        setDamage( 15);
     }
 }

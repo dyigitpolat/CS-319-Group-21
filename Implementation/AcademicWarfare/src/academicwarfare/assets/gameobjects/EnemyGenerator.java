@@ -20,8 +20,8 @@ public class EnemyGenerator extends GameObject
 {
     private boolean isWaveActive;
     double randomTime;
-    private int wave;
     private int timer;
+    private int waveTimer;
     private float positionx;
     private float positiony;
     
@@ -29,8 +29,9 @@ public class EnemyGenerator extends GameObject
     {
         super(s);
         timer = 0;
+        waveTimer = 0;
         isWaveActive = true;
-        randomTime = Math.random() * 1000 + 50;
+        randomTime = Math.random() * 100 + 100;
         setTag(2);
     }
     
@@ -50,11 +51,19 @@ public class EnemyGenerator extends GameObject
     @Override
     public void update()
     {
+        if( waveTimer > 500)
+        {
+            getScene().nextWave();
+            waveTimer = 0;
+        }
+        waveTimer++;
+        
         if( timer > randomTime && isWaveActive)
         {
             timer = 0;
             generateEnemies();
-            randomTime = Math.random() * (1000 / Math.sqrt( getScene().getWave()) ) + 50;
+            randomTime = (Math.random() * 100 + 100) / getScene().getWave();
+            System.out.println(randomTime);
         }
         timer++;
     }
@@ -97,8 +106,9 @@ public class EnemyGenerator extends GameObject
         }
         
         toAdd.setPosition( getPosition());
-        toAdd.setVelocity( new Vector2( 50, 0));
+        toAdd.setVelocity( new Vector2( 50*getScene().getWave(), 0));
         toAdd.setPath( getScene().createScenePath());
+        toAdd.setHealth( toAdd.getHealth() + (30*(getScene().getWave()-1)));
         getScene().addObject(toAdd);
     }
 }

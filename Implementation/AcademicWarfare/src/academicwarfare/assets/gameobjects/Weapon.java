@@ -54,7 +54,6 @@ public class Weapon extends GameObject
     
     public void fireAt( Enemy e)
     {
-        System.out.println("Weapon fired!");
         lastEnemy = e;
         target = e.getCenter();
         firing = 0;
@@ -139,7 +138,7 @@ public class Weapon extends GameObject
         
         g.setColor(Color.red);
         g.drawOval( (int) (getCenter().x - range), (int) (getCenter().y - range), (int) (2*range), (int) (2*range));
-        if( firing < 7)
+        if( firing < 3)
         {
             g2.setStroke(new BasicStroke(5));
             g2.setColor(Color.white);
