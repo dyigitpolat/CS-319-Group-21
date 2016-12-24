@@ -3,19 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package academicwarfare;
+package academicwarfare.assets.menuframes;
+
+import academicwarfare.AcademicWarfare;
+import java.awt.EventQueue;
+import javax.swing.JFrame;
 
 /**
  *
- * @author onur.elbirlik
+ * @author onur.elbirlik 
+ * 
+ * version 1.1 by Selin Fildiş
  */
 public class MainMenu extends javax.swing.JPanel {
 
     /**
      * Creates new form JPanel
      */
-    public MainMenu() {
+    public MainMenu(JFrame comp) {
         initComponents();
+        this.mainFrame = comp;
     }
 
     /**
@@ -36,9 +43,6 @@ public class MainMenu extends javax.swing.JPanel {
         loadGame = new javax.swing.JButton();
         newGame = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 0, 102));
-
-        options.setForeground(new java.awt.Color(255, 102, 0));
         options.setText("Options");
         options.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -46,7 +50,6 @@ public class MainMenu extends javax.swing.JPanel {
             }
         });
 
-        highScores.setForeground(new java.awt.Color(255, 102, 0));
         highScores.setText("HighScores");
         highScores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,7 +57,6 @@ public class MainMenu extends javax.swing.JPanel {
             }
         });
 
-        exitGame.setForeground(new java.awt.Color(255, 102, 0));
         exitGame.setText("Exit Game");
         exitGame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,14 +65,11 @@ public class MainMenu extends javax.swing.JPanel {
         });
 
         mainTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        mainTitle.setForeground(new java.awt.Color(255, 102, 0));
         mainTitle.setText("Academic Warfare");
 
         mainMenuTitle.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        mainMenuTitle.setForeground(new java.awt.Color(255, 102, 0));
         mainMenuTitle.setText("Main Menu");
 
-        tutorial.setForeground(new java.awt.Color(255, 102, 0));
         tutorial.setText("Tutorial");
         tutorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,7 +77,6 @@ public class MainMenu extends javax.swing.JPanel {
             }
         });
 
-        loadGame.setForeground(new java.awt.Color(255, 102, 0));
         loadGame.setText("Load Game");
         loadGame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,7 +84,6 @@ public class MainMenu extends javax.swing.JPanel {
             }
         });
 
-        newGame.setForeground(new java.awt.Color(255, 102, 0));
         newGame.setText("New Game");
         newGame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,68 +95,101 @@ public class MainMenu extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(228, 228, 228)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(highScores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(options, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(exitGame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tutorial, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(loadGame, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(newGame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(161, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(mainTitle)
-                        .addGap(156, 156, 156))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(loadGame)
-                            .addComponent(newGame, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(mainMenuTitle)
-                            .addComponent(tutorial, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(options, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(highScores)
-                            .addComponent(exitGame, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(215, 215, 215))))
+                .addComponent(mainTitle)
+                .addGap(156, 156, 156))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(mainMenuTitle)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addComponent(mainTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(mainMenuTitle)
-                .addGap(42, 42, 42)
-                .addComponent(newGame)
                 .addGap(18, 18, 18)
+                .addComponent(mainMenuTitle)
+                .addGap(48, 48, 48)
+                .addComponent(newGame)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(loadGame)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tutorial)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(options)
-                .addGap(15, 15, 15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(highScores)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(exitGame)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void optionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionsActionPerformed
-       new Options().setVisible(true);
+        mainFrame.remove( this );
+        mainFrame.add( new Options(mainFrame));
+        
+        mainFrame.pack();
+        mainFrame.repaint();
     }//GEN-LAST:event_optionsActionPerformed
 
     private void highScoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_highScoresActionPerformed
         // TODO add your handling code here:
+        mainFrame.remove( this );
+        mainFrame.add( new HighScorePanel(mainFrame));
+        
+        mainFrame.pack();
+        mainFrame.repaint();
     }//GEN-LAST:event_highScoresActionPerformed
 
     private void exitGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitGameActionPerformed
         // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_exitGameActionPerformed
 
     private void tutorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tutorialActionPerformed
         // TODO add your handling code here:
+        mainFrame.remove( this );
+        mainFrame.add( new Tutorial(mainFrame));
+        
+        mainFrame.pack();
+        mainFrame.repaint();
     }//GEN-LAST:event_tutorialActionPerformed
 
     private void loadGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadGameActionPerformed
         // TODO add your handling code here:
+         mainFrame.remove( this );
+        mainFrame.add( new LoadGame(mainFrame));
+        mainFrame.pack();
+        mainFrame.repaint();
     }//GEN-LAST:event_loadGameActionPerformed
 
     private void newGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameActionPerformed
-        // TODO add your handling code here:
+        
+       mainFrame.setVisible(false);
+       // TODO add your handling code here:
+        EventQueue.invokeLater( new Runnable() 
+        {
+            @Override
+            public void run() {
+                AcademicWarfare prg = new AcademicWarfare();
+                prg.setVisible(true);
+            }
+        });
+        
+       // oyunu başlat
     }//GEN-LAST:event_newGameActionPerformed
 
 
@@ -172,5 +202,6 @@ public class MainMenu extends javax.swing.JPanel {
     private javax.swing.JButton newGame;
     private javax.swing.JButton options;
     private javax.swing.JButton tutorial;
+    private JFrame mainFrame;
     // End of variables declaration//GEN-END:variables
 }

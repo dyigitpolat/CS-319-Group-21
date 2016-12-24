@@ -59,7 +59,7 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Component id="sceneSelectionText" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="33" max="32767" attributes="0"/>
+              <EmptySpace pref="69" max="32767" attributes="0"/>
               <Component id="clickOnTheSceneText" min="-2" pref="17" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -82,7 +82,7 @@
     <Component class="javax.swing.JLabel" name="forest">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/academicwarfare/orman d&#x131;&#x15f;.png"/>
+          <Image iconType="3" name="/academicwarfare/assets/menuframes/ormantile.png"/>
         </Property>
         <Property name="verticalAlignment" type="int" value="1"/>
       </Properties>
@@ -123,7 +123,7 @@
     <Component class="javax.swing.JLabel" name="grass">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/academicwarfare/normal-d&#x131;&#x15f;.png"/>
+          <Image iconType="3" name="/academicwarfare/assets/menuframes/normal-d&#x131;&#x15f;_1.png"/>
         </Property>
         <Property name="verticalAlignment" type="int" value="1"/>
       </Properties>
@@ -150,7 +150,7 @@
     <Component class="javax.swing.JLabel" name="ice">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/academicwarfare/buz.png"/>
+          <Image iconType="3" name="/academicwarfare/assets/menuframes/buz.png"/>
         </Property>
         <Property name="verticalAlignment" type="int" value="1"/>
       </Properties>

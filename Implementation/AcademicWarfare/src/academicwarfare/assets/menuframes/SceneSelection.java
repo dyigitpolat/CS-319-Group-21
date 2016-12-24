@@ -3,7 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package academicwarfare;
+package academicwarfare.assets.menuframes;
+
+import academicwarfare.AcademicWarfare;
+import java.awt.EventQueue;
+import javax.swing.JFrame;
 
 /**
  *
@@ -14,8 +18,11 @@ public class SceneSelection extends javax.swing.JPanel {
     /**
      * Creates new form SceneSelection
      */
-    public SceneSelection() {
+    
+    private JFrame mainFrame;
+    public SceneSelection(JFrame frame) {
         initComponents();
+        this.mainFrame = frame;
     }
 
     /**
@@ -38,7 +45,7 @@ public class SceneSelection extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(0, 0, 102));
 
-        forest.setIcon(new javax.swing.ImageIcon(getClass().getResource("/academicwarfare/orman dış.png"))); // NOI18N
+        forest.setIcon(new javax.swing.ImageIcon(getClass().getResource("/academicwarfare/assets/menuframes/ormantile.png"))); // NOI18N
         forest.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         grassSelect.setText("Grass");
@@ -57,7 +64,7 @@ public class SceneSelection extends javax.swing.JPanel {
         clickOnTheSceneText.setForeground(new java.awt.Color(255, 255, 255));
         clickOnTheSceneText.setText("Please click on the scene that you want to play with");
 
-        grass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/academicwarfare/normal-dış.png"))); // NOI18N
+        grass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/academicwarfare/assets/menuframes/normal-dış_1.png"))); // NOI18N
         grass.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         iceSelect.setText("Ice");
@@ -75,7 +82,7 @@ public class SceneSelection extends javax.swing.JPanel {
             }
         });
 
-        ice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/academicwarfare/buz.png"))); // NOI18N
+        ice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/academicwarfare/assets/menuframes/buz.png"))); // NOI18N
         ice.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -111,7 +118,7 @@ public class SceneSelection extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(sceneSelectionText)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addComponent(clickOnTheSceneText, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -129,14 +136,46 @@ public class SceneSelection extends javax.swing.JPanel {
 
     private void grassSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grassSelectActionPerformed
         // TODO add your handling code here:
+        mainFrame.setVisible(false);
+       // TODO add your handling code here:
+        EventQueue.invokeLater( new Runnable() 
+        {
+            @Override
+            public void run() {
+                AcademicWarfare prg = new AcademicWarfare(1);
+                prg.setVisible(true);
+            }
+        });
     }//GEN-LAST:event_grassSelectActionPerformed
 
     private void iceSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iceSelectActionPerformed
         // TODO add your handling code here:
+        // TODO add your handling code here:
+        mainFrame.setVisible(false);
+       // TODO add your handling code here:
+        EventQueue.invokeLater( new Runnable() 
+        {
+            @Override
+            public void run() {
+                AcademicWarfare prg = new AcademicWarfare(0);
+                prg.setVisible(true);
+            }
+        });
     }//GEN-LAST:event_iceSelectActionPerformed
 
     private void forestSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forestSelectActionPerformed
         // TODO add your handling code here:
+        // TODO add your handling code here:
+        mainFrame.setVisible(false);
+       // TODO add your handling code here:
+        EventQueue.invokeLater( new Runnable() 
+        {
+            @Override
+            public void run() {
+                AcademicWarfare prg = new AcademicWarfare(2);
+                prg.setVisible(true);
+            }
+        });
     }//GEN-LAST:event_forestSelectActionPerformed
 
 

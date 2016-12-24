@@ -3,19 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package academicwarfare;
+package academicwarfare.assets.menuframes;
+
+import javax.swing.JFrame;
 
 /**
  *
  * @author onur.elbirlik
  */
-public class HighScoreTable extends javax.swing.JPanel {
+public class HighScorePanel extends javax.swing.JPanel {
 
     /**
      * Creates new form HighScoreTable
      */
-    public HighScoreTable() {
+    public HighScorePanel(JFrame frame) {
         initComponents();
+        this.mainFrame = frame;
     }
 
     /**
@@ -31,8 +34,6 @@ public class HighScoreTable extends javax.swing.JPanel {
         highScoreTable = new javax.swing.JTable();
         returnToMainMenuButton = new javax.swing.JButton();
         HighScoreLable = new javax.swing.JLabel();
-
-        setBackground(new java.awt.Color(0, 0, 102));
 
         highScoreTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -61,7 +62,6 @@ public class HighScoreTable extends javax.swing.JPanel {
         });
 
         HighScoreLable.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        HighScoreLable.setForeground(new java.awt.Color(240, 240, 240));
         HighScoreLable.setText("HighScores");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -97,6 +97,10 @@ public class HighScoreTable extends javax.swing.JPanel {
 
     private void returnToMainMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnToMainMenuButtonActionPerformed
         // TODO add your handling code here:
+         mainFrame.remove( this );
+        mainFrame.add( new MainMenu(mainFrame));
+        mainFrame.pack();
+        mainFrame.repaint();
     }//GEN-LAST:event_returnToMainMenuButtonActionPerformed
 
 
@@ -105,5 +109,6 @@ public class HighScoreTable extends javax.swing.JPanel {
     private javax.swing.JTable highScoreTable;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton returnToMainMenuButton;
+    private JFrame mainFrame;
     // End of variables declaration//GEN-END:variables
 }

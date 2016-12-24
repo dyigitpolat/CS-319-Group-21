@@ -110,13 +110,11 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Return Back To Main Menu"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="returnToMainMenuButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\onur.elbirlik\YandexDisk\Ekran g&#xf6;r&#xfc;nt&#xfc;leri\2016-12-24_21-01-39.png"/>
-        </Property>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>
