@@ -70,10 +70,6 @@ public class GameObject
     
     public void processEvents( ArrayList<GameObject> sceneObjects)
     {
-        for( GameObject o : sceneObjects)
-        {
-            
-        }
         
     }
     

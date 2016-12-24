@@ -139,12 +139,18 @@ public class MainMenu extends javax.swing.JPanel {
     private void optionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionsActionPerformed
         mainFrame.remove( this );
         mainFrame.add( new Options(mainFrame));
+        
+        mainFrame.pack();
+        mainFrame.repaint();
     }//GEN-LAST:event_optionsActionPerformed
 
     private void highScoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_highScoresActionPerformed
         // TODO add your handling code here:
         mainFrame.remove( this );
-        mainFrame.add( new HighScore(mainFrame));
+        mainFrame.add( new HighScorePanel(mainFrame));
+        
+        mainFrame.pack();
+        mainFrame.repaint();
     }//GEN-LAST:event_highScoresActionPerformed
 
     private void exitGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitGameActionPerformed
@@ -154,14 +160,19 @@ public class MainMenu extends javax.swing.JPanel {
 
     private void tutorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tutorialActionPerformed
         // TODO add your handling code here:
-         mainFrame.remove( this );
+        mainFrame.remove( this );
         mainFrame.add( new Tutorial(mainFrame));
+        
+        mainFrame.pack();
+        mainFrame.repaint();
     }//GEN-LAST:event_tutorialActionPerformed
 
     private void loadGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadGameActionPerformed
         // TODO add your handling code here:
          mainFrame.remove( this );
         mainFrame.add( new LoadGame(mainFrame));
+        mainFrame.pack();
+        mainFrame.repaint();
     }//GEN-LAST:event_loadGameActionPerformed
 
     private void newGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameActionPerformed

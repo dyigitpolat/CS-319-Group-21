@@ -61,7 +61,6 @@ public class GameEngine
     {
         public void processEvents()
         {
-            
             for( GameObject o : currentScene.getObjects())
             {
                 o.processEvents( currentScene.getObjects());

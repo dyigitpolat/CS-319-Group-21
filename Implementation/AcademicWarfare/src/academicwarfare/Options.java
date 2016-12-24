@@ -123,6 +123,9 @@ public class Options extends javax.swing.JPanel {
         // TODO add your handling code here:
         mainFrame.remove( this );
         mainFrame.add( new MainMenu(mainFrame));
+        
+        mainFrame.pack();
+        mainFrame.repaint();
     }//GEN-LAST:event_returnMainMenuActionPerformed
 
 

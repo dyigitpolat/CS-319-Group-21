@@ -118,6 +118,10 @@ public class LoadGame extends javax.swing.JPanel {
         
          mainFrame.remove( this );
         mainFrame.add( new LoadGame(mainFrame));
+        
+        
+        mainFrame.pack();
+        mainFrame.repaint();
     }//GEN-LAST:event_mainMenuButtonActionPerformed
 
 

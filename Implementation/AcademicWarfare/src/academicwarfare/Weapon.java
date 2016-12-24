@@ -60,9 +60,9 @@ public class Weapon extends GameObject
             else if( H > 0 && W < 0)
                 setRotation( (float) (Math.atan(H/W) - Math.PI / 2) );
             else if( H < 0 && W > 0)
-                setRotation( (float) (Math.atan(H/W) + Math.PI - Math.PI / 2) );
+                setRotation( (float) (Math.atan(H/W) + Math.PI / 2) );
             else if( H < 0 && W < 0)
-                setRotation( (float) (Math.atan(H/W) + Math.PI + Math.PI / 2) );
+                setRotation( (float) (Math.atan(H/W) - Math.PI / 2) );
         }
         
         

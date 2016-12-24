@@ -11,12 +11,12 @@ import javax.swing.JFrame;
  *
  * @author onur.elbirlik
  */
-public class HighScore extends javax.swing.JPanel {
+public class HighScorePanel extends javax.swing.JPanel {
 
     /**
      * Creates new form HighScoreTable
      */
-    public HighScore(JFrame frame) {
+    public HighScorePanel(JFrame frame) {
         initComponents();
         this.mainFrame = frame;
     }
@@ -99,7 +99,8 @@ public class HighScore extends javax.swing.JPanel {
         // TODO add your handling code here:
          mainFrame.remove( this );
         mainFrame.add( new MainMenu(mainFrame));
-        
+        mainFrame.pack();
+        mainFrame.repaint();
     }//GEN-LAST:event_returnToMainMenuButtonActionPerformed
 
 

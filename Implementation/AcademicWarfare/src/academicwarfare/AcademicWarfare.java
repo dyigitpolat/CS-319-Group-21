@@ -47,6 +47,7 @@ public class AcademicWarfare extends JFrame{
         MenuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         MenuFrame.setLocationRelativeTo(null);
         MenuFrame.pack();
+        MenuFrame.setLocationRelativeTo(null);
         MenuFrame.setVisible(true);
         
         
