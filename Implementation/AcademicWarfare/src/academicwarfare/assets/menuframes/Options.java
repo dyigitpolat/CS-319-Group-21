@@ -16,8 +16,11 @@ public class Options extends javax.swing.JPanel {
     /**
      * Creates new form Options
      */
+    
+    private JFrame mainFrame;
     public Options(JFrame frame) {
         initComponents();
+        
         this.mainFrame = frame;
     }
 
@@ -39,10 +42,15 @@ public class Options extends javax.swing.JPanel {
         optionsLable = new javax.swing.JLabel();
         returnMainMenu = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 0, 102));
+
+        masterVolumeLabel.setForeground(new java.awt.Color(240, 240, 240));
         masterVolumeLabel.setText("Master Volume");
 
+        soundEffectsLable.setForeground(new java.awt.Color(240, 240, 240));
         soundEffectsLable.setText("Sound Effects");
 
+        backgroundMusicLable.setForeground(new java.awt.Color(240, 240, 240));
         backgroundMusicLable.setText("Background Music");
 
         masterVolumeBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
@@ -56,7 +64,8 @@ public class Options extends javax.swing.JPanel {
 
         backgroundMusicBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 
-        optionsLable.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        optionsLable.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        optionsLable.setForeground(new java.awt.Color(240, 240, 240));
         optionsLable.setText("Options");
 
         returnMainMenu.setText("Return To Main Menu");
@@ -123,7 +132,6 @@ public class Options extends javax.swing.JPanel {
         // TODO add your handling code here:
         mainFrame.remove( this );
         mainFrame.add( new MainMenu(mainFrame));
-        
         mainFrame.pack();
         mainFrame.repaint();
     }//GEN-LAST:event_returnMainMenuActionPerformed
@@ -138,6 +146,5 @@ public class Options extends javax.swing.JPanel {
     private javax.swing.JButton returnMainMenu;
     private javax.swing.JComboBox<String> soundEffectsBox;
     private javax.swing.JLabel soundEffectsLable;
-    private JFrame mainFrame;
     // End of variables declaration//GEN-END:variables
 }

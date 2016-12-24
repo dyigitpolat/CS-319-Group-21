@@ -9,6 +9,8 @@ import academicwarfare.engine.Scene;
 import academicwarfare.engine.GameEngine;
 import academicwarfare.assets.scenes.IceScene;
 import academicwarfare.assets.menuframes.MainMenu;
+import academicwarfare.assets.scenes.ForestScene;
+import academicwarfare.assets.scenes.GrassScene;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -25,16 +27,23 @@ public class AcademicWarfare extends JFrame{
 
     GameEngine engine;
     
-    public AcademicWarfare()
+    public AcademicWarfare( int scene)
     {
         engine = new GameEngine();
-        initScreen();
+        initScreen( scene);
     }
 
-    private void initScreen() 
+    private void initScreen(int scene ) 
     {
         //to be changed with a screen instead.
-        Scene game_scr = new IceScene();
+        Scene game_scr = null;
+        if( scene == 0)
+            game_scr = new IceScene();
+        else if( scene == 1)
+            game_scr = new GrassScene();
+        else
+            game_scr = new ForestScene();
+        
         add(game_scr);
         setSize(800, 600);
         setTitle("Academic Warfare");
