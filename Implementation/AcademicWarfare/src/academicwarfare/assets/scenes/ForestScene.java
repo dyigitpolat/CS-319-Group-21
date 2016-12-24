@@ -1,6 +1,7 @@
 package academicwarfare.assets.scenes;
 
 import academicwarfare.assets.GameScene;
+import academicwarfare.assets.Path;
 import academicwarfare.assets.gameobjects.Tile;
 
 /**
@@ -11,6 +12,19 @@ public class ForestScene extends GameScene {
     public ForestScene(){
         initMap();
     }
+    
+    public Path createScenePath()
+    {
+        Path p1 = new Path();
+        p1.addPoint(300, 25);
+        p1.addPoint(300, 250);
+        p1.addPoint(400, 250);
+        p1.addPoint(400, 500);
+        p1.addPoint(-10, 500);
+        
+        return p1;
+    }
+    
     public void initMap(){
         for(int i = 0; i <= 10; i++)
             for (int j = 0; j <= 10; j++)

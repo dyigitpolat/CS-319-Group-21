@@ -116,8 +116,8 @@ public class LoadGame extends javax.swing.JPanel {
     private void mainMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainMenuButtonActionPerformed
         // TODO add your handling code here:
         
-         mainFrame.remove( this );
-        mainFrame.add( new LoadGame(mainFrame));
+        mainFrame.remove( this );
+        mainFrame.add( new MainMenu(mainFrame));
         
         
         mainFrame.pack();

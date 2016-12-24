@@ -13,6 +13,7 @@ import java.awt.image.ImageObserver;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 import javax.imageio.ImageIO;
 
 
@@ -45,6 +46,10 @@ public class GameObject
         rotation = 0;
     }
     
+    public void update()
+    {
+        
+    }
     
     public void drawEntity( Graphics g)
     {
@@ -70,7 +75,7 @@ public class GameObject
         return (point.x <= right && point.x >= left && point.y >= up && point.y <= down);
     }
     
-    public void processEvents( ArrayList<GameObject> sceneObjects)
+    public void processEvents( CopyOnWriteArrayList<GameObject> sceneObjects)
     {
         
     }
@@ -112,6 +117,7 @@ public class GameObject
      * @return the velocity
      */
     public Vector2 getVelocity() {
+        
         return velocity;
     }
 

@@ -14,6 +14,7 @@ import academicwarfare.engine.Vector2;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  *
@@ -44,13 +45,14 @@ public class Enemy extends GameObject
     public void die( int bounty)
     {
         getScene().addPoints( bounty);
+        getScene().addMoney( bounty);
         setPosition(new Vector2(-500, -500));
         setTexture( (BufferedImage) null);
         setVelocity( new Vector2());
     }
 
     @Override
-    public void processEvents( ArrayList<GameObject> sceneObjects)
+    public void processEvents( CopyOnWriteArrayList<GameObject> sceneObjects)
     {
         if( p != null)
             pevt.processPathEvent(p, this);

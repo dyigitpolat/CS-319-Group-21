@@ -11,6 +11,7 @@ import academicwarfare.engine.Event;
 import academicwarfare.engine.GameObject;
 import academicwarfare.engine.Vector2;
 import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  *
@@ -38,7 +39,7 @@ public class WeaponEvent implements Event
     }
     
     //O(n) time algorithm where n is game enemy count
-    public Enemy closestEnemyInRange( ArrayList<Enemy> enemies, Weapon w)
+    public Enemy closestEnemyInRange( CopyOnWriteArrayList<Enemy> enemies, Weapon w)
     {
         float min;
         Enemy closestEnemy;
@@ -70,9 +71,9 @@ public class WeaponEvent implements Event
         }
     }
     
-    public ArrayList<Enemy> filterEnemies( ArrayList<GameObject> objects)
+    public CopyOnWriteArrayList<Enemy> filterEnemies( CopyOnWriteArrayList<GameObject> objects)
     {
-        ArrayList<Enemy> filtered = new ArrayList<>();
+        CopyOnWriteArrayList<Enemy> filtered = new CopyOnWriteArrayList<>();
         for( GameObject o : objects)
         {
             if( o.getTag() == 1)
@@ -82,7 +83,7 @@ public class WeaponEvent implements Event
         return filtered;
     }
     
-    public void processWeapon( Weapon w, ArrayList<GameObject> objects)
+    public void processWeapon( Weapon w, CopyOnWriteArrayList<GameObject> objects)
     {
         Enemy closestEnemy;
         

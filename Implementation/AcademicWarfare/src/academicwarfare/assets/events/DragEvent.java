@@ -5,6 +5,7 @@
  */
 package academicwarfare.assets.events;
 
+import academicwarfare.assets.gameobjects.Weapon;
 import academicwarfare.engine.GameObject;
 import academicwarfare.engine.interactions.Interaction;
 import academicwarfare.engine.interactions.InteractionEvent;
@@ -40,7 +41,17 @@ public class DragEvent implements InteractionEvent
         }
         
         if( hold)
-            gobj.setPosition( centerVector);
+        {
+            if( gobj.getTag() == 9)
+            {
+                if( !((Weapon) gobj).isFiring())
+                    gobj.setPosition( centerVector);
+            }
+            else
+            {
+                gobj.setPosition( centerVector);
+            }
+        }
     }
 
 }
