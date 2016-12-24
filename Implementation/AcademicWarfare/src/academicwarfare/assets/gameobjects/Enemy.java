@@ -39,9 +39,6 @@ public class Enemy extends GameObject
     {
         super.drawEntity(g);
         
-        g.setColor(Color.red);
-        g.drawLine( (int) getCenter().x, (int) getCenter().y, (int) (getCenter().x + getVelocity().x),(int) (getCenter().y + getVelocity().y));
-        
     }
     
     /**
