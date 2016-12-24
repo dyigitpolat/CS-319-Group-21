@@ -9,7 +9,12 @@ import academicwarfare.engine.Scene;
 import academicwarfare.engine.GameEngine;
 import academicwarfare.assets.scenes.IceScene;
 import academicwarfare.assets.menuframes.MainMenu;
-import java.awt.EventQueue;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.JFrame;
 
 /**
@@ -43,8 +48,25 @@ public class AcademicWarfare extends JFrame{
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) 
+    public static void playMusic()
     {
+        try
+        {
+            Clip clip = AudioSystem.getClip();
+            AudioInputStream ais = AudioSystem.getAudioInputStream( new File("Sounds/music.wav") );
+            clip.open(ais);
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+    
+    public static void main(String[] args)
+    {
+        playMusic();
+        
         JFrame MenuFrame = new JFrame();
         MenuFrame.add( new MainMenu(MenuFrame));
         MenuFrame.setTitle("Academic Warfare");
@@ -53,7 +75,6 @@ public class AcademicWarfare extends JFrame{
         MenuFrame.pack();
         MenuFrame.setLocationRelativeTo(null);
         MenuFrame.setVisible(true);
-        
         
     }
     

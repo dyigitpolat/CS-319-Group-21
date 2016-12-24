@@ -15,7 +15,11 @@ import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.ArrayList;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 /**
  *
@@ -49,6 +53,22 @@ public class Weapon extends GameObject
         lastEnemy = e;
         target = e.getCenter();
         firing = 0;
+        playFireSound();
+    }
+    
+    public static void playFireSound()
+    {
+        try
+        {
+            Clip clip = AudioSystem.getClip();
+            AudioInputStream ais = AudioSystem.getAudioInputStream( new File("Sounds/fire.wav") );
+            clip.open(ais);
+            clip.start();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
     }
     
     public void rotate()
