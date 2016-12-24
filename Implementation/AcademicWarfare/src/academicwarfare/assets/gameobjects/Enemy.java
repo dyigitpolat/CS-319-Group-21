@@ -5,10 +5,14 @@
  */
 package academicwarfare.assets.gameobjects;
 
+import academicwarfare.assets.GameScene;
 import academicwarfare.engine.GameObject;
 import academicwarfare.assets.Path;
 import academicwarfare.assets.events.PathEvent;
+import academicwarfare.engine.Scene;
+import academicwarfare.engine.Vector2;
 import java.awt.Color;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 /**
@@ -21,10 +25,28 @@ public class Enemy extends GameObject
     private Path p;
     private PathEvent pevt;
     
-    public Enemy()
+    public Enemy( GameScene s)
     {
+        super(s);
         setTag(1);
         pevt = new PathEvent();
+    }
+    
+    public void dealDamage( int damage)
+    {
+        health -= damage;
+        if( health <= 0)
+        {
+            die( 35);
+        }
+    }
+    
+    public void die( int bounty)
+    {
+        getScene().addPoints( bounty);
+        setPosition(new Vector2(-500, -500));
+        setTexture( (BufferedImage) null);
+        setVelocity( new Vector2());
     }
 
     @Override
@@ -58,14 +80,14 @@ public class Enemy extends GameObject
     /**
      * @return the p
      */
-    public Path getEnemypath() {
+    public Path getPath() {
         return p;
     }
 
     /**
      * @param enemypath the p to set
      */
-    public void setEnemypath(Path enemypath) {
+    public void setPath(Path enemypath) {
         this.p = enemypath;
     }
 }

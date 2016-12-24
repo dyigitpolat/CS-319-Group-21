@@ -12,6 +12,8 @@ import academicwarfare.engine.Vector2;
 import academicwarfare.assets.events.DragEvent;
 import academicwarfare.assets.gameobjects.Enemy;
 import academicwarfare.assets.Path;
+import academicwarfare.assets.gameobjects.Atalar;
+import academicwarfare.assets.gameobjects.BasicGun;
 import academicwarfare.assets.gameobjects.Weapon;
 
 /**
@@ -33,11 +35,11 @@ public class IceScene extends GameScene{
                 else
                     addTile(i,j,"Graphics/buz-dış.png", false );
         
-        Enemy e1 = new Enemy();
+        Enemy e1 = new Atalar(this);
         e1.setVelocity( new Vector2( 50, 0));
         e1.setSize( new Vector2( 80, 80));
         e1.setPosition( new Vector2( 50, 150));
-        e1.setTexture("Graphics/aa.png", this);
+        e1.setTexture("Graphics/aa.png");
         addObject(e1);
         
         Path p1 = new Path();
@@ -46,40 +48,40 @@ public class IceScene extends GameScene{
         p1.addPoint(300,450);
         p1.addPoint(500,150);
         
-        GameObject o1 = new GameObject();
+        GameObject o1 = new GameObject(this);
         o1.setSize( new Vector2(10,10));
         o1.setPosition( new Vector2(50,50));
         addObject(o1);
         
-        GameObject o2 = new GameObject();
+        GameObject o2 = new GameObject(this);
         o2.setSize( new Vector2(10,10));
         o2.setPosition( new Vector2(250,100));
         addObject(o2);
         
-        GameObject o3 = new GameObject();
+        GameObject o3 = new GameObject(this);
         o3.setSize( new Vector2(10,10));
         o3.setPosition( new Vector2(300,450));
         addObject(o3);
         
-        GameObject o4 = new GameObject();
+        GameObject o4 = new GameObject(this);
         o4.setSize( new Vector2(10,10));
         o4.setPosition( new Vector2(500,150));
         addObject(o4);
         
-        e1.setEnemypath(p1);
+        e1.setPath(p1);
         e1.setInteractionEvent( new DragEvent());
         
-        Weapon w = new Weapon( 150, 5);
+        Weapon w = new BasicGun(this);
         w.setSize( new Vector2( 80, 80));
         w.setPosition( new Vector2( 150, 250));
         w.setInteractionEvent( new DragEvent());
-        w.setTexture("Graphics/Turret1.png", this);
+        w.setTexture("Graphics/Turret1.png");
         addObject(w);
         
     }
      public void addTile( int x, int y, String texturepath, boolean movable)
     {
-        Tile t = new Tile( x, y, texturepath, this,movable);
+        Tile t = new Tile( this, x, y, texturepath, this,movable);
         addObject( t);
     }
     

@@ -5,6 +5,7 @@
  */
 package academicwarfare.assets.gameobjects;
 
+import academicwarfare.assets.GameScene;
 import academicwarfare.engine.GameObject;
 import academicwarfare.engine.Vector2;
 import academicwarfare.assets.events.WeaponEvent;
@@ -29,6 +30,7 @@ public class Weapon extends GameObject
 {
     private float range;
     private float fireRate;
+    private int damage;
     private int firing = 0;
     private Vector2 target;
     private WeaponEvent we;
@@ -36,15 +38,17 @@ public class Weapon extends GameObject
     private boolean texture_set;
     private Enemy lastEnemy;
             
-    public Weapon( float range, float fireRate)
+    public Weapon( GameScene s, float range, float fireRate)
     {
+        super(s);
         this.range = range;
         this.fireRate = fireRate;
         target = new Vector2();
         firing = 5;
         we = new WeaponEvent();
         texture_set = true;
-        lastEnemy = new Enemy();
+        lastEnemy = new Enemy( s);
+        damage = 10;
     }
     
     public void fireAt( Enemy e)
@@ -54,6 +58,7 @@ public class Weapon extends GameObject
         target = e.getCenter();
         firing = 0;
         playFireSound();
+        e.dealDamage(getDamage());
     }
     
     public static void playFireSound()
@@ -168,5 +173,19 @@ public class Weapon extends GameObject
      */
     public void setFireRate(float fireRate) {
         this.fireRate = fireRate;
+    }
+
+    /**
+     * @return the damage
+     */
+    public int getDamage() {
+        return damage;
+    }
+
+    /**
+     * @param damage the damage to set
+     */
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
 }
