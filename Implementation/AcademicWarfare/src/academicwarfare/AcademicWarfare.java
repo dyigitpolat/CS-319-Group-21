@@ -5,6 +5,10 @@
  */
 package academicwarfare;
 
+import academicwarfare.engine.Scene;
+import academicwarfare.engine.GameEngine;
+import academicwarfare.assets.scenes.IceScene;
+import academicwarfare.assets.menuframes.MainMenu;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 
@@ -41,15 +45,16 @@ public class AcademicWarfare extends JFrame{
      */
     public static void main(String[] args) 
     {
+        JFrame MenuFrame = new JFrame();
+        MenuFrame.add( new MainMenu(MenuFrame));
+        MenuFrame.setTitle("Academic Warfare");
+        MenuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        MenuFrame.setLocationRelativeTo(null);
+        MenuFrame.pack();
+        MenuFrame.setLocationRelativeTo(null);
+        MenuFrame.setVisible(true);
         
-        EventQueue.invokeLater( new Runnable() 
-        {
-            @Override
-            public void run() {
-                AcademicWarfare prg = new AcademicWarfare();
-                prg.setVisible(true);
-            }
-        });
+        
     }
     
 }

@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package academicwarfare;
+package academicwarfare.engine;
 
+import academicwarfare.engine.interactions.MouseInteraction;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -61,7 +62,6 @@ public class GameEngine
     {
         public void processEvents()
         {
-            
             for( GameObject o : currentScene.getObjects())
             {
                 o.processEvents( currentScene.getObjects());

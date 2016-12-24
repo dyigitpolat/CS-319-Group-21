@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package academicwarfare;
+package academicwarfare.assets.menuframes;
 import javax.swing.*;
 
 /**
@@ -118,6 +118,10 @@ public class LoadGame extends javax.swing.JPanel {
         
          mainFrame.remove( this );
         mainFrame.add( new LoadGame(mainFrame));
+        
+        
+        mainFrame.pack();
+        mainFrame.repaint();
     }//GEN-LAST:event_mainMenuButtonActionPerformed
 
 

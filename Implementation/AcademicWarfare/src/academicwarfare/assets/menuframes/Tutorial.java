@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package academicwarfare;
+package academicwarfare.assets.menuframes;
+
+import javax.swing.JFrame;
 
 /**
  *
@@ -11,10 +13,13 @@ package academicwarfare;
  */
 public class Tutorial extends javax.swing.JPanel {
 
+    JFrame mainframe;
     /**
      * Creates new form Tutorial
      */
-    public Tutorial() {
+    public Tutorial( JFrame mainframe) 
+    {
+        this.mainframe = mainframe;
         initComponents();
     }
 

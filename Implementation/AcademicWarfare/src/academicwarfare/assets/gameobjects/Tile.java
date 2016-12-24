@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package academicwarfare;
+package academicwarfare.assets.gameobjects;
 
+import academicwarfare.engine.Vector2;
+import academicwarfare.engine.GameObject;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.io.File;

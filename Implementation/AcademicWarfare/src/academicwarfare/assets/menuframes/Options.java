@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package academicwarfare;
+package academicwarfare.assets.menuframes;
 
 import javax.swing.JFrame;
 
@@ -123,6 +123,9 @@ public class Options extends javax.swing.JPanel {
         // TODO add your handling code here:
         mainFrame.remove( this );
         mainFrame.add( new MainMenu(mainFrame));
+        
+        mainFrame.pack();
+        mainFrame.repaint();
     }//GEN-LAST:event_returnMainMenuActionPerformed
 
 

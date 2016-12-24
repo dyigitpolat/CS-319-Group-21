@@ -1,4 +1,7 @@
-package academicwarfare;
+package academicwarfare.assets.scenes;
+
+import academicwarfare.assets.GameScene;
+import academicwarfare.assets.gameobjects.Tile;
 
 /**
  *
