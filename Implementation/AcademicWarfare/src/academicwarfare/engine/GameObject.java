@@ -5,6 +5,7 @@
  */
 package academicwarfare.engine;
 
+import academicwarfare.engine.interactions.InteractionEvent;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
