@@ -5,6 +5,7 @@
  */
 package academicwarfare.assets.gameobjects;
 
+import academicwarfare.assets.GameScene;
 import academicwarfare.engine.GameObject;
 import java.awt.Color;
 import java.awt.Font;
@@ -16,8 +17,8 @@ import java.awt.Graphics;
  */
 public class GameLabel extends GameObject {
     String label;
-    public GameLabel(String label){
-        super();
+    public GameLabel(GameScene s, String label){
+        super(s);
         this.label = label;
     }
     

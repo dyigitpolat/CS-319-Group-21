@@ -5,6 +5,7 @@
  */
 package academicwarfare.assets.gameobjects;
 
+import academicwarfare.assets.GameScene;
 import academicwarfare.engine.GameObject;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -19,8 +20,8 @@ import javax.imageio.ImageIO;
 public class GameItem extends GameObject {
     String name;
     String itemImagePath;
-    public GameItem(String name, String itemImagePath){
-        super();
+    public GameItem( GameScene s, String name, String itemImagePath){
+        super(s);
         this.name = name;
     }
     public void setImage(){
@@ -35,7 +36,6 @@ public class GameItem extends GameObject {
             System.exit(0);
         }
         setTexture( img);
-        setObserver( this.getObserver()); 
         
     }
     public void drawEntity(Graphics g){
