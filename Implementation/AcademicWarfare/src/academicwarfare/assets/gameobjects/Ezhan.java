@@ -12,8 +12,8 @@ import academicwarfare.engine.Vector2;
  *
  * @author selin
  */
-public class Ehzan extends Enemy{
-    public Ehzan( GameScene s)
+public class Ezhan extends Enemy{
+    public Ezhan( GameScene s)
     {
         super(s);
         setTexture("Graphics/ehzan.png");
