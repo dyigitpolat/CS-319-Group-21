@@ -3,7 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package academicwarfare;
+package academicwarfare.assets.scenes;
+
+import academicwarfare.engine.GameObject;
+import academicwarfare.engine.GameScene;
+import academicwarfare.assets.gameobjects.Tile;
+import academicwarfare.engine.Vector2;
+import academicwarfare.assets.DragEvent;
+import academicwarfare.assets.gameobjects.Enemy;
+import academicwarfare.assets.Path;
+import academicwarfare.assets.gameobjects.Weapon;
 
 /**
  *

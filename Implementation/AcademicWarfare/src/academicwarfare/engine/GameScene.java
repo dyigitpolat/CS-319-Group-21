@@ -3,7 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package academicwarfare;
+package academicwarfare.engine;
+
+import academicwarfare.assets.gameobjects.Tile;
+import academicwarfare.assets.gameobjects.GameLabel;
+
 /**
  *
  * @author yigitpolat

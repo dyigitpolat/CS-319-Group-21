@@ -3,7 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package academicwarfare;
+package academicwarfare.assets;
+
+import academicwarfare.engine.GameObject;
+import academicwarfare.engine.Interaction;
+import academicwarfare.engine.InteractionEvent;
+import academicwarfare.engine.Vector2;
 
 /**
  *

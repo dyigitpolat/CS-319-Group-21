@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package academicwarfare;
+package academicwarfare.assets.menuframes;
 
+import academicwarfare.AcademicWarfare;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 
