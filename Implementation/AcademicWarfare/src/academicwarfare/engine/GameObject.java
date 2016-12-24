@@ -5,6 +5,7 @@
  */
 package academicwarfare.engine;
 
+import academicwarfare.assets.GameScene;
 import academicwarfare.engine.interactions.InteractionEvent;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -26,20 +27,20 @@ public class GameObject
     private Vector2 velocity;
     private float rotation;
     private BufferedImage texture;
-    private ImageObserver observer;
+    private GameScene scene;
     private InteractionEvent interactionEvent;
     private ArrayList<Event> events;
     private int tag;
     
     
-    public GameObject()
+    public GameObject( GameScene s)
     {
         position = new Vector2(0,0);
         size = new Vector2(0,0);
         velocity = new Vector2(0,0);
         events = new ArrayList<>();
         texture = null;
-        observer = null;
+        scene = (GameScene) s;
         tag = 0;
         rotation = 0;
     }
@@ -49,7 +50,7 @@ public class GameObject
     {
       
         if( texture != null)
-            g.drawImage( texture, (int) position.x, (int) position.y, (int) size.x, (int) size.y, observer);
+            g.drawImage( texture, (int) position.x, (int) position.y, (int) size.x, (int) size.y, scene);
         else
             g.drawOval((int) getPosition().x, (int) getPosition().y, (int) getSize().x, (int) getSize().y);
     }
@@ -135,7 +136,7 @@ public class GameObject
         this.texture = texture;
     }
     
-    public void setTexture(String texturePath, ImageObserver obs) {
+    public void setTexture(String texturePath) {
         
         BufferedImage img = null;
         try 
@@ -149,22 +150,8 @@ public class GameObject
         }
         
         setTexture( img);
-        observer = obs;
     }
 
-    /**
-     * @return the observer
-     */
-    public ImageObserver getObserver() {
-        return observer;
-    }
-
-    /**
-     * @param observer the observer to set
-     */
-    public void setObserver(ImageObserver observer) {
-        this.observer = observer;
-    }
 
     /**
      * @return the tag
@@ -226,6 +213,20 @@ public class GameObject
      */
     public void setRotation(float rotation) {
         this.rotation = rotation;
+    }
+
+    /**
+     * @return the scene
+     */
+    public GameScene getScene() {
+        return scene;
+    }
+
+    /**
+     * @param scene the scene to set
+     */
+    public void setScene(GameScene scene) {
+        this.scene = scene;
     }
 
 }

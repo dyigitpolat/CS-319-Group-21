@@ -5,6 +5,7 @@
  */
 package academicwarfare.assets.gameobjects;
 
+import academicwarfare.assets.GameScene;
 import academicwarfare.engine.Vector2;
 import academicwarfare.engine.GameObject;
 import java.awt.image.BufferedImage;
@@ -20,8 +21,9 @@ import javax.imageio.ImageIO;
 public class Tile extends GameObject
 {
     private boolean movable;
-    public Tile( int x, int y, String texturePath, ImageObserver observer, boolean movable)
+    public Tile( GameScene s, int x, int y, String texturePath, ImageObserver observer, boolean movable)
     {
+        super(s);
         BufferedImage img = null;
         try 
         {
@@ -37,7 +39,6 @@ public class Tile extends GameObject
         setPosition( new Vector2( x*50, y*50));
         setVelocity( new Vector2());
         setTexture( img);
-        setObserver( observer);
     }
     public void setMovable(boolean movable){
         this.movable = movable;

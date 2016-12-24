@@ -29,7 +29,7 @@ public class GrassScene extends GameScene{
     }
      public void addTile( int x, int y, String texturepath, boolean movable)
     {
-        Tile t = new Tile( x, y, texturepath,this,movable );
+        Tile t = new Tile(this, x, y, texturepath,this,movable );
         addObject( t);
     }
      
